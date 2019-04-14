@@ -1,28 +1,27 @@
-Assembling M5.XZAP.1 on Wednesday, October 22, 1986 09:45:48
-Release: 9
+Assembling M5.ZAP.13 on Sunday, May 1, 1988 13:55:06
+Release: 13
 
     64	Inserting M5FREQ.XZAP.1	   (594 bytes)
-   658	Inserting M5DAT.ZAP.9	 (25035 bytes)
- 25693	Inserting MACROS.ZAP.4	     (0 bytes)
- 25693	Inserting MISC.ZAP.4	  (1236 bytes)
- 26929	Inserting SYNTAX.ZAP.4	     (0 bytes)
- 26929	Inserting PARSER.ZAP.4	 (13085 bytes)
- 40014	Inserting VERBS.ZAP.5	 (21161 bytes)
- 61175	Inserting GOAL.ZAP.1	 (11194 bytes)
- 72369	Inserting PEOPLE.ZAP.1	 (23137 bytes)
- 95506	Inserting CASTLE.ZAP.1	 (10616 bytes)
-106122	Inserting TOWER.ZAP.1	  (8181 bytes)
-114303	Inserting THINGS.ZAP.1	  (2553 bytes)
-116856	Inserting PLACES.ZAP.1	   (848 bytes)
-117704	Inserting GLOBAL.ZAP.1	  (3165 bytes)
-120869	Inserting COLORS.ZAP.1	  (4243 bytes)
-125112	Inserting M5STR.ZAP.9	  (3754 bytes)
-253 objects.
+   658	Inserting M5DAT.ZAP.13	 (23812 bytes)
+ 24470	Inserting M5PUR.ZAP.13	  (1254 bytes)
+ 25724	Inserting MISC.ZAP.9	  (1226 bytes)
+ 26950	Inserting PARSER.ZAP.12	 (13044 bytes)
+ 39994	Inserting VERBS.ZAP.10	 (21117 bytes)
+ 61111	Inserting GOAL.ZAP.7	 (11204 bytes)
+ 72315	Inserting PEOPLE.ZAP.6	 (23145 bytes)
+ 95460	Inserting CASTLE.ZAP.6	 (10608 bytes)
+106068	Inserting TOWER.ZAP.7	  (8177 bytes)
+114245	Inserting THINGS.ZAP.6	  (2553 bytes)
+116798	Inserting PLACES.ZAP.6	   (846 bytes)
+117644	Inserting GLOBAL.ZAP.7	  (3193 bytes)
+120837	Inserting COLORS.ZAP.6	  (4237 bytes)
+125074	Inserting M5STR.ZAP.13	  (3754 bytes)
+254 objects.
 230 globals.
 955 word vocabulary.
 
-128866 bytes (126K).
- 24439 bytes of preload.
- 13860 bytes of impure.
+128828 bytes (126K).
+ 24470 bytes of preload.
+ 13899 bytes of impure.
 
 Outputting symbol tables

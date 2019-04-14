@@ -5,7 +5,7 @@ Copyright (C) 1986 Infocom, Inc.  All rights reserved."
 	<TELL "Here " .STR "s a transcript of interaction with" CR>>
 
 <ROUTINE V-SCRIPT ()
-	<PUT 0 8 <BOR <GET 0 8> 1>>
+	<LOWCORE FLAGS <BOR <LOWCORE FLAGS> 1>>
 	<TRANSCRIPT "begin">
 	<V-VERSION>
 	<RTRUE>>
@@ -13,7 +13,7 @@ Copyright (C) 1986 Infocom, Inc.  All rights reserved."
 <ROUTINE V-UNSCRIPT ()
 	<TRANSCRIPT "end">
 	<V-VERSION>
-	<PUT 0 8 <BAND <GET 0 8> -2>>
+	<LOWCORE FLAGS <BAND <LOWCORE FLAGS> -2>>
 	<RTRUE>>
 
 <ROUTINE V-$VERIFY ()
@@ -313,21 +313,13 @@ Card can tell you why.]" CR>>
 		       <DESCRIBE-OBJECTS>)>)>>
 
 <ROUTINE V-VERSION ("AUX" (CNT 17) V)
-	 <SET V <BAND <GET 0 1> *3777*>>
+	 <SET V <BAND <LOWCORE ZORKID> *3777*>>
 	 <TELL D ,MOONMIST "|
 Infocom interactive fiction - a mystery story|
-Copyright (c) 1986 by Infocom, Inc.  All rights reserved." CR>
-	 ;<COND (<NOT <==? <BAND <GETB 0 1> 8> 0>>
-		<TELL
-"Licensed to Tandy Corporation. Version 00.00." N .V CR>)>
-	 <TELL
+Copyright (c) 1986 by Infocom, Inc.  All rights reserved." CR
 D ,MOONMIST " is a trademark of Infocom, Inc.|
 Release number " N .V " / Serial number ">
-	 <REPEAT ()
-		 <COND (<G? <SET CNT <+ .CNT 1>> 23>
-			<RETURN>)
-		       (T
-			<PRINTC <GETB 0 .CNT>>)>>
+	 <LOWCORE-TABLE SERIAL 6 PRINTC>
 	 <COND (<NOT <0? ,VARIATION>>
 		<TELL " / ">
 		<PRINTB <GET ,COLOR-WORDS ,VARIATION>>
@@ -2146,7 +2138,7 @@ HIM ,PRSO " nor any other preposition.]" CR>)>
 	 <COND (<DOBJ? INTDIR>
 		<SETG CLOCK-WAIT T>
 		<TELL "(If you want to see what's there, go there!)" CR>)
-	       (<DOBJ? CASTLE HANDS HEAD ;POCKET TOWER WALL LIGHT-GLOBAL>
+	       (<DOBJ? CASTLE HANDS HEAD OTHER-OUTFIT TOWER WALL LIGHT-GLOBAL>
 		<NOTHING-SPECIAL>)
 	       ;(<DOBJ? NOW-WEARING>
 		<TELL <GETP ,PRSO ,P?TEXT> CR>)
@@ -2561,7 +2553,7 @@ from your dealer or via mail with the form in your package.]" CR>>
 <ROUTINE V-LEAVE ("AUX" GT)
 	<COND (<==? ,WINNER ,FOLLOWER>
 	       <SETG FOLLOWER 0>)>
-	<COND (<EQUAL? ,PRSO <> ,ROOMS ,HERE>
+	<COND (<EQUAL? ,PRSO ;<> ,ROOMS ,HERE ,GLOBAL-HERE>
 	       <DO-WALK ,P?OUT>
 	       <PUTP ,WINNER ,P?LDESC 9 ;"waiting patiently">
 	       <COND (<AND <EQUAL? ,WINNER ,FRIEND>
@@ -2959,7 +2951,7 @@ And things that go bump in the night, Good Lord, deliver us!\"" CR>>
 	       ;(<NOT <FSET? ,PRSO ,TAKEBIT>>	;"SYNTAX says TAKE"
 		<YOU-CANT "pick up">
 		<RTRUE>)
-	       (<DOBJ? HEAD HANDS>
+	       (<DOBJ? HEAD HANDS OTHER-OUTFIT>
 		<WONT-HELP>
 		<RTRUE>)
 	       (<IN? ,PRSO ,GLOBAL-OBJECTS>
@@ -3533,7 +3525,7 @@ THE ,PRSI " hidden on" HIS ,PRSO " person." CR>)>)>
 		     <T? ,TREASURE-FOUND>>
 		<SET L <LOC ,INKWELL>>)>
 	 <COND (<DOBJ? CASTLE MOON OCEAN
-		       NOW-WEARING ;POCKET TOWER FLOOR
+		       NOW-WEARING OTHER-OUTFIT TOWER FLOOR
 		       WALL KEYHOLE>
 		<HAR-HAR>)
 	       (<DOBJ? ARTIFACT HANDS PASSAGE TREASURE YOU>
@@ -3936,7 +3928,7 @@ CHE ,PRSO is !\  <GET ,LDESC-STRINGS 12> ;"listening to you" "." CR>)>)
 			       <RETURN>)
 			      (T
 			       <SET WHO-WAIT <+ .WHO-WAIT 1>>
-			       <COND (<NOT <==? <BAND <GETB 0 1> 16> 0>>
+			       <COND (<T? <BAND <LOWCORE ZVERSION> 16>>
 				      <TELL !\(>
 				      <SET VAL <TIME-PRINT ,PRESENT-TIME>>
 				      <TELL ") ">)>

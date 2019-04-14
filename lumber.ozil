@@ -1,0 +1,910 @@
+"Excess baggage from Moomnist"
+
+;<OBJECT DRAWING
+	(IN DESK)
+	(DESC "drawing")
+	(ADJECTIVE LIONEL)
+	(SYNONYM DRAWING DOODLE)
+	(FLAGS TAKEBIT READBIT)
+	(ACTION DRAWING-F)>
+
+;<ROUTINE DRAWING-F ()
+ <COND (<VERB? EXAMINE READ>
+	<TELL "[The drawing portrays ">
+	<COND (<EQUAL? ,VARIATION ,LORD-C>
+	       <TELL
+"the King of Spades, holding a scepter." CR>)
+	      (<EQUAL? ,VARIATION ,FRIEND-C>
+	       <TELL
+"a bird in flight, shot by an arrow and dripping blood." CR>)
+	      (<EQUAL? ,VARIATION ,DOCTOR-C>
+	       <TELL
+"a " 'SKELETON " in Chinese mandarin costume." CR>)
+	      ;(<EQUAL? ,VARIATION ,DEALER-C>
+	       <TELL
+"a coiled cobra rearing its head in response to a snake charmer's flute music."
+CR>)
+	      (<EQUAL? ,VARIATION ,PAINTER-C>
+	       <TELL
+"an underwater diver, naked except for a loincloth." CR>)>)>>
+
+;<OBJECT TOWER-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "tower door")
+	(ADJECTIVE TOWER)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)>
+
+;<ROOM ANTE-ROOM
+	(IN ROOMS)
+	(FLAGS ONBIT SEENBIT VOWELBIT OPENBIT DOORBIT)
+	(DESC "anteroom")
+	(ADJECTIVE ANTE NEW TOWER)
+	(SYNONYM ANTEROOM ROOM DOOR)
+	(LDESC "[NE to courtyard, SW to old great hall]")
+	(LINE 3)
+	(STATION OLD-GREAT-HALL)
+	(CHARACTER 2)	;"floor number"
+	(GLOBAL ANTE-ROOM FIREPLACE ;TOWER-DOOR CHAIR)
+	(NE	TO COURTYARD IF ANTE-ROOM ;TOWER-DOOR IS OPEN)
+	(NORTH	TO COURTYARD IF ANTE-ROOM ;TOWER-DOOR IS OPEN)
+	(EAST	TO COURTYARD IF ANTE-ROOM ;TOWER-DOOR IS OPEN)
+	(OUT	TO COURTYARD IF ANTE-ROOM ;TOWER-DOOR IS OPEN)
+	(IN	TO OLD-GREAT-HALL)
+	(SW	TO OLD-GREAT-HALL)
+	(SOUTH	TO OLD-GREAT-HALL)
+	(WEST	TO OLD-GREAT-HALL)>
+
+;<ROUTINE AFRICA-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It depicts the Battle of Blood River, during the Boer War." CR>)>>
+
+;<ROUTINE BURMA-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It's a piece of the bridge over the River Kwai." CR>)>>
+
+;<ROUTINE PHILIPPINE-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It shows Lionel at the American Museum of Natural History." CR>)>>
+
+;<ROUTINE EGYPT-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It's a model of the Egyptian Sphinx, made of real sandstone." CR>)>>
+
+;<ROUTINE PACIFIC-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It's an oyster shell, almost two feet across, with a lining of very dark
+mother-of-pearl." CR>)>>
+
+;<ROUTINE AMAZON-PSEUDO ()
+ <COND (<VERB? EXAMINE>
+	<TELL
+"It's a wooden model of an Amazon river steamer." CR>)>>
+
+		;<PSEUDO (<> PAINTING AFRICA-PSEUDO)
+			(<> WOOD BURMA-PSEUDO)
+			(<> PHOTO PHILIPPINE-PSEUDO)
+			( MODEL SPHINX EGYPT-PSEUDO)
+			( GIANT OYSTER PACIFIC-PSEUDO)
+			( MODEL BOAT AMAZON-PSEUDO)>
+
+;<OBJECT BRITANNIA
+	(IN OLD-GREAT-HALL)
+	(DESC "statue of Britannia")
+	(LDESC
+"A life-size gilt statue of Britannia with trident reclines over the archway
+leading to the wing.")
+	;(ADJECTIVE LIFE-SIZE GILT)
+	(SYNONYM BRITANNIA STATUE)
+	(FLAGS SURFACEBIT OPENBIT NDESCBIT)
+	(CAPACITY 5)
+	(ACTION BRITANNIA-F)>
+
+;<ROUTINE BRITANNIA-F ()
+ <COND (<VERB? EXAMINE SEARCH SEARCH-FOR>
+	<COND (<NOT <==? ,PLAYER-SEATED ,LIBRARY-STOOL>>
+	       <COND (<VERB? EXAMINE>
+		      <RFALSE>)
+		     (T
+		      <YOU-CANT "reach">
+		      <RTRUE>)>)
+	      ;(<AND <IN? ,HEADDRESS ,BRITANNIA>
+		    <FSET? ,HEADDRESS ,SECRETBIT>>
+	       <DISCOVER ,HEADDRESS>
+	       <RTRUE>)>)
+       (<REMOTE-VERB?>
+	<RFALSE>)
+       (<NOT <==? ,PLAYER-SEATED ,LIBRARY-STOOL>>
+	<YOU-CANT "reach">
+	<RTRUE>)>>
+
+;<ROOM STAIRS-0
+	(IN ROOMS)
+	(FLAGS ONBIT SEENBIT)
+	(DESC "basement stairway")
+	(ADJECTIVE BASEMENT)
+	(SYNONYM STAIR STAIRS STAIRWAY ;ROOM)
+	(GENERIC GENERIC-STAIRS-F)
+	(LDESC
+"The stairs curve up to the southeast and down to the northwest.")
+	(LINE 3)
+	(STATION STAIRS-0)
+	(UP	TO JUNCTION)
+	(EAST	TO JUNCTION)
+	(SOUTH	TO JUNCTION)
+	(SE	TO JUNCTION)
+	(OUT	TO JUNCTION)
+	(DOWN	TO BASEMENT)
+	(NORTH	TO BASEMENT)
+	(WEST	TO BASEMENT)
+	(NW	TO BASEMENT)
+	(IN	TO BASEMENT)>
+
+;<ROOM STAIRS-1
+	(IN ROOMS)
+	(FLAGS ONBIT SEENBIT)
+	(DESC "first stairway")
+	(ADJECTIVE FIRST)
+	(SYNONYM STAIR STAIRS STAIRWAY)
+	(GENERIC GENERIC-STAIRS-F)
+	(LDESC
+"The stairs curve up to the northeast and down to the southwest.")
+	(LINE 3)
+	(STATION STAIRS-1)
+	(UP	TO CORR-2)
+	(NORTH	TO CORR-2)
+	(EAST	TO CORR-2)
+	(NE	TO CORR-2)
+	(IN	TO CORR-2)
+	(DOWN	TO OLD-GREAT-HALL)
+	(SOUTH	TO OLD-GREAT-HALL)
+	(WEST	TO OLD-GREAT-HALL)
+	(SW	TO OLD-GREAT-HALL)
+	(OUT	TO OLD-GREAT-HALL)>
+
+;<OBJECT JACK-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Lord Jack's door")
+	(ADJECTIVE JACK\'S HIS BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-JACK-DOOR-F)>
+
+;<ROUTINE MAKE-VISIBLE (OBJ)
+	<TELL "You find" THE .OBJ>
+	<FCLEAR .OBJ ,NDESCBIT>
+	<FSET .OBJ ,TAKEBIT>
+	<FSET .OBJ ,TOUCHBIT>
+	<MOVE .OBJ ,PLAYER>
+	<THIS-IS-IT .OBJ>
+	<TELL " and pick it up." CR>>
+
+;<ROUTINE WAR-CLUB-HACK ("OPTIONAL" (SP? T))
+	<COND (<AND <EQUAL? ,HERE ,JACK-ROOM>
+		    <IN? ,CURTAIN-ROD ,HERE>
+		    <FSET? ,CURTAIN-ROD ,NDESCBIT>>
+	       <FCLEAR ,CURTAIN-ROD ,NDESCBIT>
+	       <FSET ,CURTAIN-ROD ,TAKEBIT>
+	       <FSET ,CURTAIN-ROD ,TOUCHBIT>
+	       <MOVE ,CURTAIN-ROD ,WINNER>
+	       <COND (.SP? <TELL !\ >)>
+	       <TELL "By accident," HE ,WINNER pull THE ,CURTAIN-ROD>
+	       <THIS-IS-IT ,CURTAIN-ROD>
+	       <TELL
+" loose, and it winds up in" HIS ,WINNER " hands, with the curtains
+on the floor.">)>>
+
+;<OBJECT DRAPES
+	(IN JACK-ROOM ;LOCAL-GLOBALS)
+	(DESC "set of drapes")
+	(ADJECTIVE WINDOW)
+	(SYNONYM SET CURTAIN DRAPES DRAPERIES)
+	(FLAGS NDESCBIT)
+	(ACTION DRAPES-F)>
+
+;<ROUTINE DRAPES-F ()
+ <COND (<VERB? OPEN CLOSE MOVE MOVE-DIR PUSH TURN>
+	<COND (<WAR-CLUB-HACK <>>
+	       <RTRUE>)
+	      (T <WONT-HELP>)>)
+       (<VERB? EXAMINE TAKE>
+	<TELL "The curtains are of heavy damask material.">
+	<WAR-CLUB-HACK>
+	<CRLF>)>>
+
+;<OBJECT STUDY-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "study door")
+	(ADJECTIVE STUDY)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)>
+
+;<OBJECT LIBRARY-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "library door")
+	(ADJECTIVE LIBRARY)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)
+	(GENERIC GENERIC-LIBRARY-DOOR-F)>
+
+;<OBJECT LIBRARY-STOOL
+	(IN LIBRARY)
+	(DESC "stepstool")
+	(ADJECTIVE STEP)
+	(SYNONYM STOOL STEPSTOOL)
+	(FLAGS SURFACEBIT OPENBIT NDESCBIT TAKEBIT)
+	(SIZE 100)
+	(CAPACITY 99)
+	(ACTION LIBRARY-STOOL-F)>
+
+;<ROUTINE LIBRARY-STOOL-F ()
+ <COND (<VERB? SIT CLIMB-ON BOARD>
+	<SETG PLAYER-SEATED ,LIBRARY-STOOL>
+	<TELL "Okay." CR>)>>
+
+;<OBJECT OFFICE-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "office door")
+	(ADJECTIVE OFFICE)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT VOWELBIT SEENBIT)>
+
+;<OBJECT TAMARA-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Tamara's door")
+	(ADJECTIVE TAMARA TAMMY BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-TAMARA-DOOR-F)>
+
+;<ROOM STAIRS-2
+	(IN ROOMS)
+	(FLAGS ;ONBIT SEENBIT)
+	(DESC "second stairway")
+	(ADJECTIVE SECOND)
+	(SYNONYM STAIR STAIRS STAIRWAY)
+	(GENERIC GENERIC-STAIRS-F)
+	(LDESC
+"The stairs curve up to the northwest and down to the southeast."
+;"[UP/E to second floor, DOWN/N to first floor]")
+	(LINE 3)
+	(STATION STAIRS-2)
+	(UP	TO CORR-3)
+	(NORTH	TO CORR-3)
+	(WEST	TO CORR-3)
+	(NW	TO CORR-3)
+	(IN	TO CORR-3)
+	(DOWN	TO CORR-2)
+	(SOUTH	TO CORR-2)
+	(EAST	TO CORR-2)
+	(SE	TO CORR-2)
+	(OUT	TO CORR-2)>
+
+;<OBJECT SECRET-LUMBER-DOOR
+	(IN ROOMS ;LOCAL-GLOBALS)
+	(DESC "secret door")
+	(ADJECTIVE SECRET)
+	(SYNONYM DOOR)
+	(FLAGS SECRETBIT DOORBIT)
+	(GENERIC GENERIC-LUMBER-DOOR-F)>
+
+;<OBJECT LUMBER-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "lumber-room door")
+	(ADJECTIVE LUMBER ROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)
+	(GENERIC GENERIC-LUMBER-DOOR-F)>
+
+;<OBJECT CHAPEL-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "chapel door")
+	(ADJECTIVE CHAPEL)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)>
+
+;<OBJECT GAME-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "game-room door")
+	(ADJECTIVE GAME GAME-ROOM ROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)>
+
+;<ROOM STAIRS-3
+	(IN ROOMS)
+	(FLAGS ;ONBIT SEENBIT)
+	(DESC "third stairway")
+	(ADJECTIVE THIRD)
+	(SYNONYM STAIR STAIRS STAIRWAY)
+	(GENERIC GENERIC-STAIRS-F)
+	(LDESC
+"The stairs curve up to the southwest and down to the northeast."
+;"[UP/N to top floor, DOWN/W to second floor]")
+	(LINE 3)
+	(STATION STAIRS-3)
+	(UP	TO DECK)
+	(SOUTH	TO DECK)
+	(WEST	TO DECK)
+	(SW	TO DECK)
+	(OUT	TO DECK)
+	(DOWN	TO CORR-3)
+	(NORTH	TO CORR-3)
+	(EAST	TO CORR-3)
+	(NE	TO CORR-3)
+	(IN	TO CORR-3)>
+
+;<ROOM CURTAIN-WALL
+	(IN ROOMS)
+	(FLAGS ONBIT SEENBIT SURFACEBIT OPENBIT)
+	(DESC "curtain wall")
+	(ADJECTIVE CURTAIN)
+	(SYNONYM WALL)
+	(LDESC "[S to fighting deck]")
+	(GLOBAL MOON OCEAN)
+	(LINE 3)
+	(STATION DECK)
+	(SOUTH	TO DECK)
+	(IN	TO DECK)
+	(OUT	TO DECK)>
+
+;<OBJECT BLAST
+	(IN CAR)
+	(DESC "blast")
+	(ADJECTIVE INT.NUM SHORT LONG)
+	(SYNONYM BLAST BLASTS)
+	(FLAGS NDESCBIT)>
+
+;<OBJECT FOYER-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "foyer door")
+	(ADJECTIVE FOYER DOUBLE BRONZE)
+	(SYNONYM DOOR DOORS)
+	(FLAGS DOORBIT SEENBIT)>
+
+;<OBJECT DRAWING-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "drawing-room door")
+	(ADJECTIVE DRAWING ROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)
+	(GENERIC GENERIC-DRAWING-DOOR)>
+
+;<OBJECT CARTOON
+	(IN DRAWING-ROOM)
+	(DESC "framed cartoon")
+	;(ADJECTIVE FRAMED DRUNK HUNGOVER)
+	(SYNONYM CARTOON PICTURE RHINO RHINOCEROS)
+	;(GENERIC GENERIC-PAINTING)
+	(FLAGS NDESCBIT SEENBIT)
+	(ACTION PICTURE-F)>
+
+;<OBJECT FLAGGS
+	(IN GREAT-HALL)
+	(DESC "bunch of flags")
+	(SYNONYM BUNCH FLAGS)
+	(FLAGS CONTBIT OPENBIT NDESCBIT)
+	(CAPACITY 99)
+	(LDESC
+"In the southeast corner of the Great Hall, on a raised dais, is a
+circular metal stand, containing various flags on their standards.")
+	(TEXT
+"The flags include the Union Jack, the flag of the Duchy of Cornwall,
+the regimental colors of the Duke of Cornwall's Light Infantry
+blazoned with the regiment's battle honors, and an embroidered
+yellow household flag.")
+	(ACTION FLAGGS-F)>
+
+;<ROUTINE FLAGGS-F () <FCLEAR ,FLAGGS ,NDESCBIT> <RFALSE>>
+
+;<ROOM STAIRS-NEW
+	(IN ROOMS)
+	(FLAGS ONBIT SEENBIT SURFACEBIT OPENBIT WEARBIT)
+	(DESC "landing")
+	(ADJECTIVE NEW)
+	(SYNONYM LANDING STAIR STAIRS STAIRWAY)
+	(GENERIC GENERIC-LANDING)
+	(LINE 1)
+	(STATION GREAT-HALL)
+	(GLOBAL FIREPLACE WINDOW STAIRS)
+	(UP	TO GALLERY)
+	(IN	TO GALLERY)
+	(NORTH	"Do you want to go up or down?")
+	(DOWN	TO GREAT-HALL)
+	(OUT	TO GREAT-HALL)
+	(ACTION STAIRS-NEW-F)>
+
+;<ROUTINE STAIRS-NEW-F ("OPTIONAL" (RARG 0))
+ <COND (<EQUAL? .RARG ,M-LOOK>
+	<TELL-LIKE-BROCHURE>)>>
+
+;<OBJECT SITTING-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "sitting-room door")
+	(ADJECTIVE SITTING ROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT SEENBIT)
+	(GENERIC GENERIC-SITTING-DOOR)>
+
+;<ROUTINE WRITING-DESK-F ()
+ <COND (<VERB? EXAMINE LOOK-INSIDE LOOK-ON SEARCH SEARCH-FOR>
+	<COND (<IN? ,LETTER-MAID ,WRITING-DESK>
+	       <FCLEAR ,LETTER-MAID ,NDESCBIT>
+	       <FSET ,LETTER-MAID ,TAKEBIT>
+	       <RFALSE>)>)>>
+
+;<OBJECT TAPE-LIONEL
+	(IN RECORDER)
+	(DESC "Lionel's tape")
+	(ADJECTIVE LI\'S HIS)
+	(SYNONYM TAPE LIONEL)
+	(FLAGS NARTICLEBIT ;TAKEBIT)
+	(SIZE 2)>
+
+;<OBJECT CONTROL-PANEL
+	(IN KITCHEN)
+	(ADJECTIVE CONTROL)
+	(SYNONYM PANEL BUTTON SWITCH)
+	(DESC "control panel")
+	(FLAGS SEARCHBIT)
+	(TEXT "It has several buttons and a speaker.")
+	(ACTION CONTROL-PANEL-F)>
+
+;<OBJECT GATE-BUTTON
+	(IN CONTROL-PANEL)
+	(DESC "gate button")
+	(ADJECTIVE ;"FRONT TALL WROUGHT SECURITY" GATE)
+	(SYNONYM BUTTON)
+	(ACTION GATE-BUTTON-F)>
+
+;<ROUTINE CONTROL-PANEL-F ;GATE-BUTTON-F ()
+ <COND (<VERB? LAMP-ON MOVE MOVE-DIR PUSH RUB TURN>
+	<TELL "Nothing seems to happen." CR>)>>
+
+;<OBJECT BROKEN-LAMP
+	(ADJECTIVE BROKEN BRASS)
+	(SYNONYM LAMP LANTERN)
+	(DESC "broken lantern")
+	(FLAGS TAKEBIT)>
+
+;<OBJECT NIGHTLAMP-LG
+	(IN LOCAL-GLOBALS ;NIGHTSTAND-LG)
+	(DESC "lamp")
+	(ADJECTIVE TAM\'S JACK\'S VIV\'S HYDE\'S IAN\'S DOC\'S IRIS\'S)
+	(SYNONYM LAMP LIGHT LIGHTS)
+	(FLAGS ONBIT LIGHTBIT SEENBIT)>
+
+;<OBJECT YOUR-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "your door")
+	(ADJECTIVE MY ;YOUR BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-YOUR-DOOR)>
+
+;<OBJECT IRIS-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Iris's door")
+	(ADJECTIVE IRIS\'S HER BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-IRIS-DOOR-F)>
+
+;<OBJECT WENDISH-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Wendish's door")
+	(ADJECTIVE DOC\'S HIS ;WENDISH BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-WENDISH-DOOR-F)>
+
+;<OBJECT VIVIEN-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Vivien's door")
+	(ADJECTIVE VIV\'S HER BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-VIVIEN-DOOR)>
+
+;<OBJECT IAN-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Ian's door")
+	(ADJECTIVE IAN\'S HIS BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-IAN-DOOR)>
+
+;<OBJECT HYDE-DOOR
+	(IN LOCAL-GLOBALS)
+	(DESC "Hyde's door")
+	(ADJECTIVE HYDE\'S HIS BED ROOM BEDROOM)
+	(SYNONYM DOOR)
+	(FLAGS OPENBIT DOORBIT NARTICLEBIT)
+	(GENERIC GENERIC-HYDE-DOOR)>
+
+;<ROUTINE DONT-KNOW (PER OBJ) <TELL "\"Dunno.\"" CR>>
+
+;<ROOM UNCONSCIOUS
+	(IN ROOMS)
+	(DESC "limbo")
+	(FLAGS NARTICLEBIT)>
+
+;<ROUTINE UNCONSCIOUS-FCN ("OPTIONAL" (TIM 0) "AUX" HR NXT ;PS)
+	<COND (<0? .TIM> <SET TIM <+ 9 <RANDOM 6>>>)>
+	;<SETG MUNGED-PERSON ,PLAYER>
+	<SET HR <FIRST? ,PLAYER>>
+	<REPEAT ()
+		<SET NXT <NEXT? .HR>>
+		<COND (<NOT <FSET? .HR ,WORNBIT>>
+		       <MOVE .HR <LOC ,PLAYER>>)
+		      (<NOT <EQUAL? .HR ,SLEEP-OUTFIT>>
+		       <FSET .HR ,MUNGBIT>)>
+		<COND (<ZERO? .NXT> <RETURN>)
+		      (T <SET HR .NXT>)>>
+	<SET HR ,HERE>
+	<MOVE ,PLAYER ,UNCONSCIOUS>
+	<SETG HERE ,UNCONSCIOUS>
+	<TELL "...||">
+	<USL>
+	<QUEUE I-COME-TO .TIM>
+	<V-WAIT .TIM <> T>
+	;<INT-WAIT .TIM>
+	<QUEUE I-COME-TO 0>
+	<MOVE ,PLAYER .HR>
+	<SETG HERE .HR>
+	<COND (<ZERO? ,PLAYER-SEATED>
+	       <SETG PLAYER-SEATED <- 0 ,HERE> ;.PS>)>
+	<RTRUE>>
+
+;<ROUTINE ANYONE-VISIBLE? ("OPTIONAL" (VICTIM <>) "AUX" CNT X (VAL <>))
+ <SET CNT 0>
+ <REPEAT ()
+	 <COND (<G? <SET CNT <+ .CNT 1>> ,CHARACTER-MAX>
+		<SET VAL <>>
+		<RETURN>)
+	       (<EQUAL? .VICTIM <SET VAL <GET ,CHARACTER-TABLE .CNT>>>
+		<AGAIN>)
+	       (<VISIBLE? .VAL>
+		<RETURN>)>>
+ .VAL>
+
+"<CONSTANT PASS1-LINE-C 4>
+<CONSTANT PASS2-LINE-C 5>"
+
+"<GLOBAL PASS1-LINE
+	<PTABLE 0	SECRET-LANDING-JACK	P?DOWN
+		P?WEST	PASSAGE-1		P?UP
+		P?DOWN	SECRET-LANDING-TAM	P?NE
+		P?SOUTH	DINING-LANDING		P?NORTH
+		P?DOWN	SECRET-LANDING-LIB	0>>
+
+<GLOBAL PASS2-LINE
+	<PTABLE 0	SECRET-VIVIEN-PASSAGE	P?UP
+		P?DOWN	GARRET-PASSAGE		P?EAST
+		P?WEST	GARRET-CORNER		P?NORTH
+		P?SOUTH	NORTH-CORNER		P?DOWN
+		P?UP	IRIS-CLOSET		P?WEST
+		P?EAST	WENDISH-CORNER		P?SOUTH
+		P?NORTH	DRAWING-CLOSET		P?SOUTH
+		P?NORTH	GALLERY-CORNER		P?WEST
+		P?EAST	HYDE-CLOSET		0>>"
+
+;<
+
+		DRAWING-CLOSET	DRAWING-ROOM	;"transfers from PASS2-LINE"
+		YOUR-CLOSET	YOUR-ROOM
+		SECRET-LANDING-LIB	LIBRARY
+		SECRET-VIVIEN-PASSAGE	SECRET-LANDING-TAM
+		0		0>
+
+;<ROUTINE I-PRE-DINNER ("OPTIONAL" (GARG <>) "AUX" N CH RM ;(SAID <>) GT)
+      %<DEBUG-CODE
+	<COND (<OR ,IDEBUG <==? .GARG ,G-DEBUG>>
+	       <TELL "[I-PRE-DINNER:">
+	       <COND (<==? .GARG ,G-DEBUG> <RFALSE>)>)>>
+	<COND (<EQUAL? ,FOLLOWER ,FRIEND ,LORD>
+	       <SETG FOLLOWER 0>)>
+	;<SET GT <GT-O ,BUTLER>>
+	;<COND (<NOT <==? <GET .GT ,GOAL-FUNCTION> ,BUTLER-COOKS>>
+	       <PUT .GT ,GOAL-FUNCTION ,BUTLER-COOKS>
+	       <ESTABLISH-GOAL ,BUTLER ,KITCHEN>)>
+	<SET N ,MASS-COUNTER>
+	<COND (<IGRTR? N ,CHARACTER-MAX>
+	       <SETG MASS-SAID <>>
+	       <SETG MASS-COUNTER 0>
+	       <RFALSE>)
+	      ;(<EQUAL? .N ,LOVER-C>
+	       <INC N>)>
+	<QUEUE I-PRE-DINNER 1>
+	<SETG MASS-COUNTER .N>
+	<SET CH <GET ,CHARACTER-TABLE .N>>
+	<SET RM <GET ,CHAR-ROOM-TABLE <+ 1 .N>>>
+	<PUT <GET ,GOAL-TABLES .N> ,GOAL-FUNCTION ,X-WASHES>
+	<ESTABLISH-GOAL .CH .RM>
+	<COND (<AND <EQUAL? <META-LOC .CH> ,HERE>
+		    <ZERO? ,MASS-SAID>>
+	       <SETG MASS-SAID T>
+	       <TELL
+D .CH " says, \"It's time to wash up for dinner now.
+I'll see you in the " 'DINING-ROOM ".\"" CR>)>
+      %<DEBUG-CODE
+	<COND (,IDEBUG <TELL N ,MASS-SAID !\] CR>)>>
+	<RETURN ,MASS-SAID>>
+
+;<ROUTINE X-WASHES ("OPTIONAL" (GARG <>))
+ %<DEBUG-CODE <COND (<OR ,IDEBUG <==? .GARG ,G-DEBUG>>
+		     <TELL "[X-WASHES:">
+		     <COND (<==? .GARG ,G-DEBUG> <RFALSE>)>)>>
+ <COND (<==? .GARG ,G-REACHED>
+	<PUTP ,GOAL-PERSON ,P?LDESC 8 ;"washing up">
+	<RFALSE>)>>
+
+;<ROUTINE I-WITHDRAW ("OPTIONAL" (GARG <>) "AUX" (N 0) CH (SAID <>))
+	%<DEBUG-CODE <COND (<OR ,IDEBUG <==? .GARG ,G-DEBUG>>
+			    <TELL "[I-WITHDRAW:">
+			    <COND (<==? .GARG ,G-DEBUG> <RFALSE>)>)>>
+	<QUEUE I-BEDTIME <- ,BED-TIME ,PRESENT-TIME>>
+	<COND (<EQUAL? ,DINING-ROOM ,HERE>
+	       <SET SAID T>
+	       <TELL
+D ,LORD " says, \"If you ladies will join Tammy in the " D ,SITTING-ROOM
+", we'll try to puzzle this one out.\"" CR>
+	       <COND (<FSET? ,PLAYER ,FEMALE>
+		      <TELL
+D ,FRIEND " says, \"Won't you join us, "FN"?\"" CR>)>
+	       <ESTABLISH-GOAL ,FRIEND ,SITTING-ROOM>
+	       <ESTABLISH-GOAL ,DEB ,SITTING-ROOM>
+	       <ESTABLISH-GOAL ,PAINTER ,SITTING-ROOM>)>
+      %<DEBUG-CODE
+	<COND (,IDEBUG <TELL N .SAID !\] CR>)>>
+	<RETURN .SAID>>
+
+;<ROUTINE GHOST-DRESSES ("OPTIONAL" (GARG <>) "AUX" L X GT (VAL <>))
+	%<DEBUG-CODE <COND (<OR ,IDEBUG <==? .GARG ,G-DEBUG>>
+			    <TELL "[GHOST-DRESSES:">
+			    <COND (<==? .GARG ,G-DEBUG> <RFALSE>)>)>>
+	<SET L <LOC ,FRIEND>>
+	<COND (<EQUAL? .L ,HERE>
+	       <TELL
+"Suddenly" HE ,FRIEND " runs smack into you!|
+\"Oh, do pardon me, "FN", but I just discovered this " D ,PASSAGE ",
+and I couldn't resist exploring a little.\"|">
+	       <SET VAL ,M-FATAL>
+	       <PUT <GT-O ,FRIEND> ,GOAL-ENABLE 0>)
+	      (<==? .GARG ,G-REACHED>
+	       <SET VAL <DRESS-GHOST .L ,FRIEND-C>>
+	       <ESTABLISH-GOAL ,GHOST-NEW ,YOUR-CLOSET>)>
+	%<DEBUG-CODE <COND (,IDEBUG <TELL N .VAL "]|">)>>
+	<RETURN .VAL>>
+
+;<OBJECT RUBY
+	;(IN LOCAL-GLOBALS)
+	(DESC "pigeon's-blood ruby")
+	(ADJECTIVE PIGEON BLOOD RED)
+	(SYNONYM RUBY EYE)
+	(FLAGS NDESCBIT SECRETBIT)
+	(SIZE 3)
+	(TEXT
+"a large pigeon's-blood ruby, possibly the most priceless of all gems")
+	(ACTION RUBY-F)>
+
+;<ROUTINE RUBY-F ()
+ <COND (<VERB? EXAMINE>
+	<FCLEAR ,RUBY ,SECRETBIT>
+	<SETG TREASURE-FOUND ,RUBY>
+	<TELL "It's " <GETP ,RUBY ,P?TEXT> "!" CR>)
+       (<AND <VERB? TAKE>
+	     <IN? ,RUBY ,RHINO-HEAD>
+	     <FSET? ,RUBY ,NDESCBIT>>
+	<FCLEAR ,RUBY ,NDESCBIT>
+	<FCLEAR ,RUBY ,SECRETBIT>
+	<FSET ,RUBY ,TAKEBIT>
+	<SETG TREASURE-FOUND ,RUBY>
+	<MOVE ,RUBY ,PLAYER>
+	<TELL
+"It's stuck pretty tightly in its socket, but eventually you pry it loose.
+Your own eyes pop a bit as you examine your find more closely. It's "
+<GETP ,RUBY ,P?TEXT> "!" CR>)>>
+
+;<OBJECT HEADDRESS
+	;(IN LOCAL-GLOBALS)
+	(DESC "Egyptian headdress")
+	(ADJECTIVE EGYPTIAN ;HEAD)
+	(SYNONYM HEADDRESS DRESS)
+	(FLAGS WEARBIT VOWELBIT SECRETBIT)
+	(SIZE 9)
+	(TEXT
+"the gold headdress of a Pharaoh's daughter, in the shape of a coiled
+cobra")
+	(ACTION HEADDRESS-F)>
+
+;<ROUTINE HEADDRESS-F ()
+ <COND (<VERB? EXAMINE>
+	<FCLEAR ,HEADDRESS ,SECRETBIT>
+	<SETG TREASURE-FOUND ,HEADDRESS>
+	<TELL "It's obviously " <GETP ,HEADDRESS ,P?TEXT> "!" CR>)>>
+
+;<OBJECT IAN-EVIDENCE
+	(DESC "Ian's note")
+	(ADJECTIVE IAN\'S JACK\'S HIS)
+	(SYNONYM EVIDENCE NOTE)
+	(FLAGS NDESCBIT READBIT NARTICLEBIT SECRETBIT RMUNGBIT ;"= is evidence")
+	(CHARACTER 5)	;"for this char"
+	(TEXT
+"It's a note from Jack to Ian, offering to pay off his gambling IOU if
+he will take Deirdre off Jack's hands."
+;"It clearly shows how Ian wanted to break up Tamara's romance.")
+	(SIZE 2)>
+
+;<OBJECT HYDE-IOU
+	(DESC "museum report")
+	(ADJECTIVE HYDE\'S HIS MUSEUM)
+	(SYNONYM EVIDENCE REPORT)
+	(FLAGS NDESCBIT READBIT SECRETBIT RMUNGBIT ;"= is evidence")
+	(CHARACTER 6)	;"for this char"
+	(TEXT
+"It's a report from the British Museum, saying their tests have proved
+that a valuable painting from the castle is a very recent fake.
+While it was in his shop for cleaning, Hyde sold the original to one
+of his customers.")
+	(SIZE 4)>
+
+;<OBJECT POCKET
+	(IN ;PLAYER GLOBAL-OBJECTS)
+	(DESC "your pocket")
+	(ADJECTIVE MY)
+	(SYNONYM POCKET)
+	(FLAGS CONTBIT OPENBIT NARTICLEBIT NDESCBIT SEARCHBIT)
+	(CAPACITY 5)
+	(ACTION POCKET-F)>
+
+;<ROUTINE POCKET-F ("AUX" X)
+	 <COND ;(<DIVESTMENT? ,POCKET>
+		<HAR-HAR>)
+	       (<VERB? EXAMINE LOOK-INSIDE LOOK-THROUGH>
+		<TELL "Your pocket ">
+		<COND (<NOT <FIRST? ,POCKET>>
+		       <TELL "is empty." CR>)
+		      (T
+		       <TELL "contains">
+		       <PRINT-CONTENTS ,POCKET>
+		       <TELL "." CR>
+		       ;<SET X <PRINT-CONT ,POCKET ;T>>)>
+		<RTRUE>)
+	       (<VERB? EMPTY>
+		<COND (<FIRST? ,POCKET>
+		       <TELL "You are now holding">
+		       <ROB ,POCKET ,PLAYER T>
+		       <CRLF>)>)
+	       (<VERB? OPEN CLOSE>
+		<TELL "You don't need to do that." CR>)>>
+
+;<OBJECT CLOTHES
+	(IN GLOBAL-OBJECTS ;ADVENTURER)
+	(DESC "your clothes")
+	(ADJECTIVE ;YOUR MY)
+        (SYNONYM CLOTHES)
+	(FLAGS WORNBIT WEARBIT NARTICLEBIT)
+	;(ACTION CLOTHES-F)>
+
+;<ROUTINE CLOTHES-F ("AUX" X)
+	 <COND (<VERB? EXAMINE>
+		<TELL <GETP ,NOW-WEARING ,P?TEXT> CR>)>>
+
+<ROUTINE COMMON-ASK-ABOUT (PER OBJ)
+ <COND 
+       ;(<OR <AND <==? .PER ,LORD>	<==? .OBJ ,OFFICER>>
+	    <AND <==? .PER ,OFFICER>	<==? .OBJ ,LORD>>>
+	<TELL
+"\"We've been mates for years, since serving together in the
+Coldstream Guards.\"" CR>)
+       ;(<EQUAL? .OBJ ,LORD>
+	<TELL "\"A fine young man, and he seems very happy recently.\"" CR>)
+       ;(<EQUAL? .OBJ ,DEB>
+	<DISCRETION .PER .OBJ>
+	<TELL
+"\"She's a kittenish Mayfair deb, who
+comes on as an affectionate girl friend of ">
+	<COND (<==? .PER ,FRIEND> <TELL "mine.\"" CR> <RTRUE>)>
+	<TELL 'FRIEND "'s.">
+	<COND (<==? .PER ,LORD> <TELL "\"" CR> <RTRUE>)>
+	<TELL " But she radiates
+bitchy overtones which suggest that she may have secret designs of her
+own on " 'LORD " Tresyllian, and that she secretly hates " 'FRIEND " for
+beating her time with his lordship.\"" CR>)
+       ;(<EQUAL? .OBJ ,OFFICER>
+	<DISCRETION .PER .OBJ>
+	<TELL
+"\"He's a sporty young London man-about-town and officer in the
+Coldstream Guards. He's a close buddy of " 'LORD "'s, who is himself an
+ex-Guards officer. Belowstairs gossip at the castle hints that Ian was
+madly in love with " 'LOVER ", and that it was a quarrel over him which led
+to her breakup with " 'LORD ".\"" CR>)
+       ;(<EQUAL? .OBJ ,DOCTOR>
+	<TELL
+"\"Nicholas Wendish was, in fact, a classmate of Lionel Tresyllian's at
+Cambridge University, and over the years the two kept in close touch.
+Trained as a medical man and biochemist, " 'DOCTOR " is a leading
+authority on drugs derived from plants and their use in the treatment
+of disease.\"" CR>)
+       ;(<EQUAL? .OBJ ,DEALER>
+	<TELL
+"\"He's a London antique dealer who has come to Cornwall to discuss with ">
+	<COND (<==? .PER ,LORD> <TELL "me">) (T <TELL D ,LORD>)>
+	<TELL
+" the possible sale of Tresyllian family portraits and other objets d'art.\""
+CR>)
+       ;(<EQUAL? .OBJ ,PAINTER>
+	<DISCRETION .PER .OBJ>
+	<TELL
+"\"She's a local painter of vintage beauty and uncertain age,
+who is reputed to have been the mistress of ">
+	<COND (<==? .PER ,LORD> <TELL "my">) (T <TELL "Jack's">)>
+	<TELL " late kinsman Lionel, the previous Lord Tresyllian.\"" CR>)>>
+
+;<GLOBAL EXPLAINED-JEWEL:OBJECT <>>
+
+;<ROUTINE FIND-JEWEL-EXPLAINER ("AUX" O)
+	<SET O <FIRST? ,HERE>>
+	<REPEAT ()
+	 <COND (<NOT .O> <RETURN <>>)
+	       (<AND <FSET? .O ,PERSONBIT>
+		     <NOT <FSET? .O ,RMUNGBIT>>
+		     <NOT <FSET? .O ,MUNGBIT>>
+		     <NOT <EQUAL? .O ,PLAYER ,OFFICER>>>
+		<RETURN .O>)
+	       (T <SET O <NEXT? .O>>)>>>
+
+;<ROUTINE PRE-APOLOGIZE ("AUX" P)
+ <COND (<NOT <DOBJ? ROOMS>>
+	<RFALSE>)
+       (<QCONTEXT-GOOD?>
+	<PERFORM ,PRSA ,QCONTEXT>
+	<RTRUE>)
+       (<SET P <FIND-FLAG-HERE-NOT ,PERSONBIT ,MUNGBIT ,WINNER>>
+	<TELL-I-ASSUME .P " to">
+	<PERFORM ,PRSA .P>
+	<RTRUE>)>>
+
+;<ROUTINE V-HIDE ()
+	 <COND ;(<EQUAL? ,HERE ,OFFICE>
+		<TELL "You could hide behind the lounge." CR>)
+	       (T <TELL "There's no good hiding place here." CR>)>>
+
+;<ROUTINE V-HIDE-BEHIND ()
+ <COND (<FIND-FLAG-HERE-NOT ,PERSONBIT ,MUNGBIT ,WINNER>
+	<TELL "As you start to hide">
+	<COND (<T? ,PRSI> <HIM-HER-IT ,PRSO>)>
+	<TELL ", you realize that someone may be watching you." CR>)
+       (T
+	<TELL "There's no room to hide">
+	<COND (<T? ,PRSI> <HIM-HER-IT ,PRSO>)>
+	<TELL " behind">
+	<COND (<T? ,PRSI> <HIM-HER-IT ,PRSI>)
+	      (T <HIM-HER-IT ,PRSO>)>
+	<TELL "." CR>)>>
+
+;<ROUTINE V-KICK () <HACK-HACK "Kicking">>
+
+;<ROUTINE PRE-SHOOT ("AUX" X)
+ <COND (<ZERO? ,PRSI>
+	<COND (<FSET? ,PRSO ,PERSONBIT>
+	       <COND (<SET X <FIND-FLAG ,WINNER ,WEAPONBIT>>
+		      <TELL-I-ASSUME .X " with">
+		      <PERFORM ,V?SHOOT ,PRSO .X>
+		      <RTRUE>)
+		     (T
+		      <SETG CLOCK-WAIT T>
+		      <TELL ,YOU-DIDNT-SAY-W "ith what!]" CR>)>)
+	      (T
+	       <COND (<SET X <FIND-FLAG-HERE ,PERSONBIT ,WINNER>>
+		      <TELL-I-ASSUME .X " at">
+		      <PERFORM ,V?SHOOT .X ,PRSO>
+		      <RTRUE>)
+		     (T
+		      <SETG CLOCK-WAIT T>
+		      <TELL ,YOU-DIDNT-SAY-W "hom!]" CR>)>)>)>>

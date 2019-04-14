@@ -82,6 +82,8 @@ into the " 'COURTYARD ".|">>
 				 (T <SET SUM <+ .SUM <GETB ,P-INBUF .NUM>>>)>>
 		      <COND (<SET X <ZMEMQ .SUM ,COLOR-LETTERS>>
 			     <SETG VARIATION .X>)
+			    (<EQUAL? .SUM %<ASCII !\p>>	;"pink => blue"
+			     <SETG VARIATION ,PAINTER-C>)
 			    (T <SETG VARIATION <+ 1 <MOD .SUM ,MAX-VARS>>>)>
 		      <SETG COLOR-FORCED <GET ,COLOR-WORDS ,VARIATION>>)>
 	       <DO-VARIATION>
@@ -681,7 +683,7 @@ what you could use for poison-pen letters.\"" CR>)>)>>
 <GLOBAL FIRST-NAME <TABLE #BYTE 0 #BYTE 120
 				0 0 0 0 0 0 0 0 0 0 0 0 0 0 0>> "x"
 <GLOBAL LAST-NAME  <TABLE #BYTE 0 #BYTE 116 #BYTE 101 #BYTE 115
-				  #BYTE 116 #BYTE 101 #BYTE 114
+				  #BYTE 116 #BYTE 101 #BYTE 114 #BYTE 0
 				0 0 0 0 0 0 0 0 0 0 0 0>> "tester"
 
 <GLOBAL SUFFIX <TABLE #BYTE 0 #BYTE 0 0 0>>

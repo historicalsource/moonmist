@@ -1,0 +1,1239 @@
+@Style[TabWidth 8 chars]
+@Style[Justification no]
+If you've never played Infocom's interactive fiction before, you will have
+more fun if you
+read this manual.
+But if you're an experienced Infocom player, just read @U[Section I: About
+Moonmist].
+
+@Heading[TABLE OF CONTENTS]
+
+@U[Section I: About Moonmist]		
+
+Preface to the Story
+
+Some Verbs You Can Use
+
+Variations				
+
+Sample Transcript and Map
+
+About the Authors
+
+@U[Section II: About Infocom's Interactive Fiction]	
+
+An Overview
+@Verbatim[
+	* What is interactive fiction?
+	* Moving around
+	* Turns and score]
+
+Starting and Stopping
+@Verbatim[
+	* "Booting up"
+	* Saving and restoring
+	* Quitting and starting over]
+
+How to "Talk" to Infocom's Interactive Fiction	
+@Verbatim[
+	* Simple sentences
+	* Complex sentences
+	* Talking to characters in the story
+	* Words you can use]
+
+Special Commands
+
+Tips for New Players
+@Verbatim[
+	Ten useful pointers about interactive fiction]
+
+Common Complaints
+
+We're Never Satisfied
+
+If You Have Technical Problems				
+
+Copyright and Warranty Information			
+
+Quick Reference Guide
+@Verbatim[
+	The most important things to know about interactive fiction.]
+
+
+@Unnumbered[SECTION I: ABOUT MOONMIST]
+@Heading[Preface to the Story]
+
+Welcome to the world of Infocom's interactive fiction, a world where:
+
+- you become the heroine or hero in a story,
+
+- you can use your own thinking and imagination to guide the story from
+start to finish,
+
+- you can meet other people, who may or may not help you, and
+
+- you can go to new places, figure out mysteries and puzzles, and
+outsmart enemies.
+
+In @U[Moonmist], you are a famous young American detective.  An old
+friend, Tamara Lynd, has written you a letter (which is in this
+package), asking for your help.  And so you have travelled to England to
+test your detective skills.
+
+As the story begins, you are outside Tresyllian Castle -- the old, dark,
+hauntingly beautiful castle where Tamara now lives.  Tamara greets you,
+and you meet some interesting guests.  But your
+visit soon turns to mystery, as a trail of riddles and clues leads you
+to a hidden valuable treasure.
+
+But Tamara is worried about a ghost that is tormenting her.  What
+does the ghost want?  Is it jealous of her?  Does the ghost want the
+hidden treasure for itself?  Or is the ghost a fake -- just someone
+dressing up to frighten Tamara?  If so, why?
+
+These mysteries and others are waiting to test your wits in
+@U[Moonmist]. 
+
+@Unnumbered[Some Verbs You Can Use]
+
+This is a list of some of the verbs that @U[Moonmist] knows.
+There are many more.
+And you can use a preposition with many verbs -- for
+example, LOOK can become LOOK IN, LOOK BEHIND, LOOK UNDER, LOOK
+THROUGH, LOOK AT, and so on.
+
+You can use some of these verbs in all
+Infocom stories; you can use others only in @U[Moonmist].
+
+@Verbatim[
+	ADJUST
+	ANSWER
+	APOLOGIZE
+	ARREST
+	ASK		
+	ATTACK
+	BLOW
+	BOW
+	CALL
+	CHANGE
+	CHECK
+	CLEAN
+	CLIMB
+	CLOSE
+	COMPARE
+	CURTSY
+	DANCE
+	DESCRIBE
+	DIG
+	DRESS
+	DROP		
+	EAT
+	ENTER
+	EXAMINE
+	FEEL
+	FIND
+	FOLLOW		
+	GET
+	GIVE
+	GO
+	HIDE
+	JUMP
+	KISS
+	KNOCK
+	LEAVE
+	LIE
+	LISTEN
+	LOCK
+	LOOK (or L)
+	MOVE
+	NOD
+	OPEN
+	PLAY
+	POINT
+	PULL
+	PUSH
+	PUT
+	READ
+	REMOVE
+	SEARCH
+	SHAKE
+	SHOOT
+	SHOW
+	SIT
+	SLAP
+	SMELL
+	SMILE
+	STAND
+	TAKE
+	TALK
+	TELL
+	THANK
+	THROW
+	TURN
+	UNLOCK
+	USE
+	WAIT (or Z)
+	WAKE
+	WALK
+	WASH
+	WEAR
+	WRITE
+	YELL]
+	
+			
+@Unnumbered[Variations]
+
+To finish @U[Moonmist], you will figure out riddles or clues,
+find a hidden treasure, and solve the mystery of the ghost.  But after
+you do that, you can play @U[Moonmist] again, and there will be
+different clues, a different treasure, and a new ghost mystery to
+solve! 
+
+Near the start of @U[Moonmist], the butler will ask you for your name
+and your favorite color.  If you
+answer RED, then you will play "the red variation" of the story.  If you
+answer BLUE, then you will play the blue variation of the
+story, somewhat different from the
+red one.  Answering GREEN will mean the green variation, and
+answering YELLOW will mean the yellow one.
+
+You can actually pick @U[any] color as your favorite:  you can answer
+PURPLE, or VERMILION, or anything you like.  If you choose a color
+that's not red, blue, green, or yellow, then the computer will pick one of
+the four variations for you to play.  Similar colors with different names
+may or may not give you the same variation.  But you can always find out
+which variation you are playing by using the VERSION command. 
+
+If you give a title with your name -- such as Ms. or Mr. -- then the
+computer will try to figure out whether you are female or male, and
+some of the people you meet will treat you differently.
+
+Most players like to play one variation until they finish it.  And
+some players like to make up a new name when they play a new variation.
+Then they can remember what's different in the story, by pretending
+that the story is about a new detective, who has a new mystery to solve.
+
+@Unnumbered[Sample Transcript and Map]
+
+This transcript is not from @U[Moonmist], but it does show many of the
+usual things you can do in the story. It shows some simple
+puzzles and their solutions, and it will give you a good idea of how
+Infocom's interactive fiction works. The player's commands appear in
+capital letters after each prompt (>). The comments inside brackets []
+explain what is happening and are not real parts of the transcript.
+The map shows the layout of rooms in
+the sample transcript, as you might have drawn it. NOTE: In this sample
+transcript, you play a female character. In @U[Moonmist] you can be
+either a male or a female character.
+
+[Diagram #1, the sample transcript map, goes here]    
+
+
+(outside museum)
+
+You are at the front door of the Hollywood Classic Movie Museum.  A
+gold-colored star decorates the big wooden front door.
+
+>GO IN
+
+The door is locked.
+
+>EXAMINE THE STAR
+
+The star sticks out a little from the surface of the door.
+
+>PUSH THE STAR
+
+The door swings open.
+
+>GO IN
+
+(lobby)
+
+This is the air-conditioned lobby of the museum, decorated with old
+movie posters and autographed photos of movie stars.  Through the glass
+doors leading outside you can see the sidewalk glaring in the heat of
+the California sun.  North of you, under a large poster of "Gone with
+the Wind," is the entrance to the exhibits.  Across the linoleum floor,
+under a sign that says "Tours Meet Here," you can see a small group of
+people.
+
+A tour guide beckons for you to join the group.  "Welcome to the museum," 
+she says, shaking your hand.  "I'm glad you could join us.  Tell me, what was
+your favorite movie creature?"
+
+>KING KONG
+
+"Did you say King Kong?" 
+
+>YES
+
+"That's wonderful," she enthuses.  "It just happens that our special exhibit
+this week features King Kong."
+
+The tour guide points to her name tag, saying, "My name's Spencer.  What's 
+your name?"
+
+>MS. DANIELLE CROMPTON
+
+"Did you say, Ms. Danielle Crompton?"
+
+>YES
+
+"Feel free to ask me questions about any of the exhibits you see.  Let's begin
+the tour."  Spencer leads you and three other people north into the first
+exhibition hall.
+
+(Errol Flynn room)
+
+Errol Flynn made quite a few movies in his heyday in Hollywood, and from the 
+amount of props, costumes and photographs crammed into this room, there's 
+something here from every single one of those movies. There are doors on
+the east and south walls.  
+
+>LOOK AT GROUP
+
+Besides yourself and the tour guide, there are three people in the group: a
+good-looking man you judge to be about your age, an older woman and an older
+man.
+
+>LOOK AT WOMAN
+
+(Which woman do you mean, the tour guide or the older woman?)
+
+>OLDER
+
+The older woman is wearing a white silk dress with large purple flowers
+on it.  She has a hat to match.  And the woman is carrying an oversized
+purple tote bag.
+
+"This is an older section of the museum," Spencer says.  "It was built as
+a memorial to Errol Flynn.  The case on the north wall contains several of
+the swords he used in his swashbuckling roles.  Against the west wall there
+are several pairs of his trademark boots.  Let's move on."
+
+Spencer walks through the door on the east side of the room.
+
+>GO EAST
+
+You walk into the next room.  The other people follow you.  
+
+(horror movie room)
+
+Among the different props in the room, your eyes are drawn to the large
+pendulum swinging overhead.  There is an open iron maiden near the entrance
+to the south, assorted coffins, and several glass jars on a shelf against the
+west wall.  Doors lead west and north.
+
+Spencer is waiting for you.
+
+>INVENTORY
+
+You are holding a linen suit (actually, wearing it).  In the pocket of the
+suit you see keys, money, and a magnet.
+
+"This room is a collection of props from the old horror movies," Spencer says,
+when the whole group has gathered.  "There is a card in front of each piece
+explaining what movie it is from, when the picture was released, and what part
+the prop played in the film."
+
+>LOOK IN THE GLASS JARS
+
+You notice that each jar contains a pair of false vampire teeth.
+
+>TAKE THE VAMPIRE TEETH
+
+You would have to open the jar to do that.
+
+>OPEN THE JAR
+
+You're not holding the glass jar.
+
+>TAKE THE GLASS JAR
+
+"Please don't touch the exhibits," Spencer says.  "Many of them are very old
+and fragile."
+
+>LOOK AT SPENCER
+
+She is wearing a navy blue jacket and skirt with a cream-colored blouse.
+You assume this is the museum uniform.
+
+>ASK SPENCER AOBUT THE PENDULUM
+
+(I don't know the word "aobut".)
+
+>OOPS ABOUT
+
+@U{[You can fix a misspelled word if you type OOPS then the word that was
+misspelled.]}
+
+"Oh, we were very lucky to get that piece," she says.  "Many museums wanted 
+it, but our curator happens to be a personal friend of Vincent Price, who
+donated it."
+
+"Our next room," continues Spencer, "is our special exhibit of the week,
+the King Kong exhibit.  I'm sure you'll enjoy it, Danielle." Your group
+follows Spencer through the door in the north wall into the next room.
+
+(King Kong room)
+
+This room is filled with gorilla suits, comic books, and cartoons.  You find
+yourself drawn to the center of the room, where there is an amazing model of
+New York City with the Empire State Building rising up from it.
+
+>LOOK AT THE MODEL
+
+The other people in the group must have been waiting to see this too, because
+before you can get close enough to the model, they crowd in front of you.
+
+>YELL
+
+(Whom do you want to yell at?)
+
+>THE GROUP
+
+(You can't use more than one direct object with "yell"!)
+
+>YELL AT THE OLDER WOMAN
+
+The older woman glares at you in a way that reminds you of your second grade
+teacher.
+
+Someone moves away from the model, leaving room for you.  In your excitement,
+you inadvertently step on the toes of the good-looking man.
+
+>ASK YOUNG MAN ABOUT THE MODEL
+
+Too bad, but he is peeved with you.
+
+>APOLOGIZE TO HIM
+
+"Apology accepted.  By the way, my name's Ed."
+
+>LOOK AT THE MODEL 
+
+You marvel at the detail in the towering skyscrapers and miniature cars.  As
+your eyes move over the model, you focus on the Empire State Building.  The
+spire is perfectly crafted, the antenna so thin and fragile...  You gasp!  
+King Kong is missing from his customary perch!
+
+>SPENCER, TELL ME ABOUT KING KONG
+
+"He really was one of my favorite movie creatures too, Danielle."
+
+>SPENCER, LOOK AT THE MODEL
+
+Spencer stands next to you, surveying the model.  Her face whitens and she 
+trembles slightly.  "King Kong is missing!" she gasps.  "I've got to
+find that statuette.  This model is one of our most valuable pieces!"
+Immediately, she presses a button on the wall, which begins to glow red.
+You hear a voice from a hidden speaker ask, "What's the problem?"
+Spencer urgently replies, "King Kong is missing from the Empire State
+Building model.  Come quickly!"
+
+>SPENCER, DESCRIBE THE MODEL
+
+"It was built in 1979 by a local artist.  He used papier mache for most of
+the buildings and metal for the framework of Kong.  All the details are
+handpainted," she says.
+
+>SEARCH THE MODEL
+
+You peer closely at each tiny building.  Clinging to the antenna of the
+Empire State Building is a small scrap of what appears to be white silk.
+
+>G
+
+@U{[Using the letter "G" this way is a short way to say "again".
+The program will repeat your previous action.]}
+
+A second search of the model reveals a strand of grayish hair between two
+of the miniature skyscrapers.
+
+>TAKE THE SCRAP AND THE STRAND OF HAIR
+
+Strand of hair:  Gently you lift the strand of hair from the model.
+
+Scrap of silk:  Gently you lift the scrap of fabric from the model.
+
+>COMPARE SCRAP TO THE OLDER WOMAN'S DRESS
+
+Holding the scrap of fabric near her dress, it looks like the same material!
+
+>LOOK AT THE WOMAN'S DRESS
+
+Near the cuff on her right hand you notice a small hole.
+
+>ASK WOMAN ABOUT KING KONG
+
+"I'm not as interested as you are in that ragged chimp, dear.  Errol Flynn
+was my one and only movie favorite.  Furthermore, " she adds, "you may
+address me as Mrs. Vanderbiltmoore if you wish any further conversation
+with me."  Mrs. Vanderbiltmoore casually walks south out of the room.
+
+The guard arrives, circles the model slowly, looks under the table, then
+begins questioning people separately.
+
+>LOOK AT THE STRAND OF HAIR
+
+It appears to be from someone with gray hair.
+
+>ASK ED ABOUT KING KONG
+
+"Definitely one of my favorites.  I say, has anyone ever told you that
+you look like Fay Raye?"
+
+>NO
+
+"Well, maybe if you had a blond wig."
+
+>I
+
+@U{[You can use the short word "I" instead of INVENTORY.]}
+
+You are holding a scrap of silk and a strand of hair, and a linen suit 
+(actually, wearing it).  In the pocket of the suit you see keys, money, and
+a magnet. 
+
+>LOOK AT THE OLDER MAN
+
+From the possessive way Mrs. Vanderbiltmoore was holding onto his arm, you
+assume the older man to be Mr. Vanderbiltmoore.  He is quite distinguished
+looking in his tan suit with red paisley ascot.
+
+>GO TO ERROL FLYNN ROOM
+
+@U{[You can type "GO TO (a room)" if you know the name of the room you wish to 
+go to, and the program will take you there.]}
+
+(Errol Flynn room)
+
+Mrs. Vanderbiltmoore is here gazing at one of the many portraits of Errol
+Flynn.
+
+>SHOW THE SCRAP TO MRS. VANDERBILTMOORE
+
+Mrs. Vanderbiltmoore glances nervously at the fabric.  "It looks like a 
+pretty piece of fabric."
+
+She leaves the room to the east.
+
+>FOLLOW HER
+
+(horror movie room)
+
+Mrs. Vanderbiltmoore is here, tightly clutching her bag to her.  
+
+She leaves the room, heading north.
+
+>G
+
+(King Kong room)
+
+The security guard is questioning Ed.  
+
+Mr. Vanderbiltmoore is smoothing his ascot.
+
+Mrs. Vanderbiltmoore is tapping her foot anxiously.
+
+Spencer is searching the room.
+
+>THROW THE KEYS TO MRS. VANDER
+
+@U{[If you want to save time while typing, you can always shorten words to
+six letters.]}
+
+(You take the keys out of your pocket first.)
+
+The keys sail through the air toward Mrs. Vanderbiltmoore, who catches them
+somewhat clumsily with her right hand.
+
+>PUT THE MAGNET ON MRS. VANDER'S BAG
+
+You can't put the magnet on the bag, but when you pass the magnet near it,
+something inside the bag is attracted to the magnet and clunks against 
+the bag.
+
+>COMPARE STRAND TO MRS. VANDER'S HAIR
+
+The strand of hair matches almost exactly to Mrs. Vanderbiltmoore's hair.
+
+>ACCUSE MRS. VANDERBILTMOORE
+
+You call the guard over to you.  Realizing the jig is up, Mrs. Vanderbiltmoore
+rushes south from the room into the horror movie room.
+
+>RUN SOUTH
+
+(horror movie room)
+
+Apparently Mrs. Vanderbiltmoore ran too closely past the iron maiden.  Her
+white silk dress is stuck on one of the spikes protruding from the iron
+maiden.  The large purple tote bag lies open at her feet.
+
+Mrs. Vanderbiltmoore is tugging frantically at her dress, trying to get away 
+from the iron maiden.
+
+>LOOK IN THE BAG
+
+Among the scattered coins, tissues, and make-up, you see the metallic
+statuette of King Kong.
+
+The guard and Spencer arrive just as Mrs. Vanderbiltmoore begins sobbing.  He
+removes the statuette from the bag and hands it to Spencer.
+
+Spencer thanks you for solving the mystery of the missing King Kong and gives
+you a lifetime pass to the museum.  Congratulations, Danielle!
+
+
+@Unnumbered[About the Authors]
+
+Stu Galley was a student of physics and journalism when he discovered
+computers, which at the time were mostly just big number-crunchers.  At
+first he thought computers were too much fun to be taken seriously,
+until he decided that physics was too little fun to be taken seriously.
+At MIT he discovered computer games and LISP-like languages and met the
+other founders of Infocom.  He began writing interactive fiction in 1982 and
+has authored @U[The Witness], @U[Seastalker], and @U[Moonmist], all for
+Infocom.  His son enjoys interactive fiction more than his wife does.
+
+Jim Lawrence has written fiction extensively for both children and
+adults in a variety of media: books, magazine articles, film and radio
+scripts, and comic strips, including "decision" strips.  He estimates
+that he has written some sixty books of fiction, many of them under pen
+names for series like @U[Tom Swift Jr.] and @U[Nancy Drew].  His radio
+credits include weekly scripts for @U[Sergeant Preston of the Yukon],
+@U[The Green Hornet], and @U[Sky King].  He has written for, and in some
+cases created and illustrated, the comic strips @U[Dallas, Joe Palooka,
+Captain Easy, Friday Foster], and @U[Buck Rogers].  To date, he has
+authored two works of interactive fiction published by Infocom:
+@U[Seastalker], published in 1984, and @U[Moonmist], in 1986.
+
+@Unnumbered[SECTION II: ABOUT INFOCOM'S INTERACTIVE FICTION]
+@Heading[An Overview]
+
+Interactive fiction is a story in which @U{you} are the main character.
+Your own thinking and imagination guide the actions of that character
+and guide the story from start to finish.
+
+Each work of interactive fiction, such as @U[Moonmist], tells you
+about a series of places, things, people, and events. You can move
+from place to place, use the things you find, and interact with the
+other people, to affect the outcome of the story.
+
+An important
+part of interactive fiction is solving puzzles. If you find a locked
+door or a scary ghost, don't think of it as an obstacle; it's just a
+puzzle to be tackled. Often the best way to solve a puzzle is to find a
+certain thing in the story, bring it with you, and use it the right way.
+
+When you play @U[Moonmist], the story goes on only from the time you
+press the RETURN (or ENTER) key until you see the next prompt (>).  Nothing
+happens until you type a sentence and press the RETURN (or ENTER) key.
+You could leave your computer, eat lunch, take a nap, and return to the
+story to find that nothing has changed. So you can think and plan your
+turns as slowly and carefully as you want.
+
+
+@Unnumbered[Starting and Stopping]
+
+@U{Starting the story}: To start @U[Moonmist], follow the instructions on
+the Reference Card in your package.  The computer will display the title
+of the story, followed by the first bit of action and a description of
+the place where the story begins: you are sitting in your car
+outside the closed castle gate.
+(The Reference Card tells what to do if a full screen of text appears
+and the computer waits until you're ready to go on.) Then the prompt (>)
+will appear, which means that the computer is ready for your command.
+
+Here's a quick exercise to help you get used to
+@U[Moonmist].  Type the following command first:
+@Verbatim[	
+   	>GET OUT OF THE CAR]
+   
+Then press the RETURN (or ENTER) key. The computer will respond with: 
+@Verbatim[
+	(You are now in the driveway.) 
+	You are by the front gate of the castle.  Your new little 
+	sports car is parked here.  The castle is on a coastal   
+	headland. Far below, you can hear the rolling breakers beating  
+	against the rocks.]
+
+Then try:   
+@Verbatim[
+   	>OPEN THE GATE]
+   
+After you press the RETURN (or ENTER) key, the computer will again
+respond. Now @U{you} decide what to do next.
+
+@U{Saving and restoring}: You will probably have many hours of fun
+before you finish
+@U[Moonmist]. If you use the SAVE command, you can continue the
+story at a later time without having to start over from the beginning,
+just as you can place a bookmark in a book you are reading. The SAVE command
+puts a
+"snapshot" of your place in the story onto another disk. You can also
+save your place before (or after) trying something dangerous or tricky.
+That way, you can go back to that point later, even if you get
+lost or "killed" in the story.
+
+To save your place in the story, type SAVE at the prompt (>), and then
+press the RETURN (or ENTER) key. Then follow the instructions on your
+Reference Card for saving and restoring. Most computers need a blank
+disk, already initialized and formatted, for saving your
+place. If you use a disk with other data on it
+(not counting other @U[Moonmist] saved places), the
+data may be destroyed.  You can save your place as many times
+as you like, if you use more blank disks.
+
+You can restore a saved place any time you want. To do so, type
+RESTORE at the prompt (>), and then press the RETURN (or ENTER) key. Then
+follow the instructions on your Reference Card. You can then continue
+the story from the point where you used the SAVE command.
+
+@U{Quitting and starting over}: If you want to start over from the
+beginning, type RESTART at the prompt (>), and
+then press the RETURN (or ENTER) key. (This is
+usually faster than "booting up" again.) Just to make sure, the computer will
+ask if you really want to start over. If you do, type Y or YES and press
+the RETURN (or ENTER) key.
+
+If you want to stop entirely, type QUIT at the prompt (>) and then
+press the RETURN (or ENTER)
+key. Once again, the computer will ask if this is really what you want
+to do.
+
+Remember when you RESTART or QUIT: if you want to be able to return to
+this point again, you must first use the SAVE command.
+
+@Unnumbered[How to "Talk" to Infocom's Interactive Fiction]
+
+In @U[Moonmist], you type your commands in plain English each time you
+see the prompt (>). The computer usually acts as if your commands begin
+with "I want to...," but you shouldn't actually type those words.
+You can use words like THE if you want, and you can use capital letters
+if you want; the computer doesn't care either way.
+
+When you have finished typing a command, press the RETURN (or ENTER)
+key. The computer will then respond, telling you whether your command is
+possible at this point in the story, and what happened as a result.
+
+The computer looks at only the first six letters of each of your words, and it 
+ignores any letters after the sixth. For example, the computer would think
+that CLOTHEs, CLOTHEsline, and CLOTHEspin are all the same word.
+
+One way to move around is to type the direction you want to go.
+You can use the eight compass directions: NORTH, EAST, SOUTH, WEST,
+NORTHEAST, SOUTHEAST, SOUTHWEST, and NORTHWEST. You can also use
+IN and OUT, and in some places UP or DOWN.
+Or you can use these short words:
+N for NORTH, E for EAST, S for SOUTH, W for WEST, NE for NORTHEAST,
+SE for SOUTHEAST, SW for SOUTHWEST, NW for NORTHWEST, U for UP, and
+D for DOWN.
+
+If you know which room you want to go to, and you don't want to see
+things along the way, just type GO TO (wherever it is you want to go),
+and press the RETURN (or ENTER) key.  For example:
+@Verbatim[
+	>GO TO THE DINING ROOM]
+
+You can find the names of some places by looking at the map in
+your @U[Moonmist] package, but there are many other rooms in and around
+Tresyllian Castle.
+
+You don't need to walk
+around or turn around in a place; anything that you can see there is
+within your reach.
+
+The computer recognizes many different kinds of sentences. Here are
+several examples. (Some of these things do not actually
+appear in @U[Moonmist].)
+
+@Verbatim[	
+   	>WALK TO THE NORTH
+	
+   	>GO DOWN
+	
+   	>NE
+	
+   	>TAKE THE GLASSES
+
+   	>READ THE BOOK
+
+   	>LIE DOWN ON THE BED
+
+        >EXAMINE THE SILVER TRAY
+
+   	>PULL THE LEVER
+
+   	>PUT THE KEY IN MY POCKET
+
+        >GO TO TAMARA'S ROOM
+
+   	>TAKE THE CANDLE
+
+   	>SHOOT THE GHOST WITH THE BLOW GUN
+
+   	>PUT THE ROCK INTO THE WELL 
+
+   	>CLIMB THE FENCE
+     
+   	>SEARCH THE CEILING]
+
+If you want to TAKE, DROP, or EXAMINE more than one thing, you can do
+it in one command if you separate the things with a comma or the word
+AND.  Here are some examples:  
+@Verbatim[	
+   	>TAKE THE LETTER AND THE GLASS
+
+   	>DROP THE BRASS LANTERN, THE PEARLS, AND THE BROCHURE
+
+   	>EXAMINE THE DINNER OUTFIT, THE EXERCISE OUTFIT, AND THE TRAY]
+
+You can type several sentences on one line if you separate them with a period
+or the word THEN. (Each sentence will still count as a turn.)
+You don't need a period at the end of the line. If the computer doesn't
+recognize one of your sentences, or if something unusual happens, it
+will ignore the rest of your sentences on that line (see "Common
+Complaints" on page N). For example, you could type all of these
+sentences at once, before pressing the RETURN (or ENTER) key:
+@Verbatim[	
+   	>READ THE BOOK. GO NORTH THEN CLIMB THE LADDER. WAKE JACK]
+
+The words IT, HIM, HER, and ALL can be very useful. For example: 
+@Verbatim[
+   	>CLOSE THE HEAVY METAL DOOR. LOCK IT
+        
+   	>TAKE THE BOTTLE OF PILLS. CLOSE IT. PUT IT IN THE DRAWER
+
+   	>SMILE AT JACK. SHOW HIM THE CARD 
+
+	>TAKE ALL
+	
+   	>TAKE ALL FROM THE CUPBOARD 
+
+   	>DROP ALL BUT THE PIPE AND THE STICK
+
+        >GIVE ALL BUT THE LETTER TO DR. WENDISH] 
+
+The word ALL refers to every visible thing except those inside something
+else. If there were an apple on the ground and an orange inside a cabinet,
+TAKE ALL would take the apple but not the orange.
+
+You will meet many interesting people in @U[Moonmist,] and you can
+"talk" to them and give them commands.  Read the letter in your @U[Moonmist]
+package for a
+description of some of the people you will meet.  There are simple rules
+to follow when "talking" to people.  To "talk" to a person, type the
+person's name, then a comma, then whatever you want them to do.  For
+example:
+@Verbatim[
+	>JACK, TELL ME ABOUT THE CASTLE
+
+	>IRIS, FOLLOW ME
+
+	>DR. WENDISH, DESCRIBE THE GHOST]
+
+You can ask a question by typing ASK (someone) ABOUT (someone or
+something).  For instance:
+@Verbatim[
+	>ASK JACK ABOUT THE LETTER
+
+	>ASK VIVIEN ABOUT DEIRDRE]
+   
+The computer will try to guess what you really mean if you
+don't give it enough information. For example, if you say that you want to
+do something, but not what you want to do it to or with, the computer
+may decide that there is only one possible thing that you could
+mean. When it does so, it will tell you. For example:
+@Verbatim[
+	>GET OUT
+
+	(out of the closet)
+
+	You get out of the closet and are now standing in the foyer.]
+
+If your command is not clear enough, the computer will ask what you
+really mean. You can answer by typing the missing information, not the
+whole sentence again. You can do this only at the very next prompt (>). For
+example:
+@Verbatim{
+   	>KNOCK ON THE DOOR 
+
+   	[Which door do you mean, Ian's bedroom door or 
+	Iris's bedroom door?]
+
+   	>IAN'S
+
+   	You knock on the door, but there is no answer.}
+
+The computer recognizes almost 1,000 different words, nearly all
+that you are likely to use in your commands. However, there are many
+words in the descriptions in @U[Moonmist] that the computer will not
+recognize in your sentences. For example, you might read, "Moonlit
+clouds flit across the evening sky." If the computer doesn't recognize
+the words MOONLIT or CLOUDS when you type them, then you know that you
+don't need them to finish the story; they just give you a more vivid
+description of where you are or what is going on.
+
+@Unnumbered[Special Commands]
+
+This is a list of useful one-word commands and their explanations.
+You can use them whenever you want.
+Type the command after the prompt (>) and press the RETURN (or ENTER) key.
+INVENTORY, LOOK, and WAIT will count as a turn.
+
+AGAIN - The computer will act as if you had typed your previous
+command again. For instance, if you type GO TO THE LIBRARY, and some
+character stops you on the way, then you can type AGAIN instead of
+typing the whole command again.
+(You can use the short word G instead of AGAIN.)
+
+BRIEF - After this command, the computer will tell you all about a place or a thing
+only the first time you see it.  If you see it again later, the computer
+will tell you only that it is there.  This is the normal way that the computer
+will act, unless you use the VERBOSE or SUPERBRIEF commands.  SUPERBRIEF
+tells the computer to tell you only the name of a place you have entered,
+even the first time you see it.  Of course, you can always type LOOK to get a
+description of a place, and the things there.  In
+SUPERBRIEF mode, there is no blank line between turns.  SUPERBRIEF is
+for players who are already very familiar with the story. VERBOSE
+tells the computer to tell you all about a place or thing every time you
+see it.
+
+INVENTORY - The computer will tell you what you are carrying. (You can use
+the short word I instead of INVENTORY.)
+
+LOOK - This tells the computer to describe your location in full detail.
+(You can use the short word L instead of LOOK.)
+
+OOPS - If you misspell a word, and the computer doesn't recognize it,
+you can fix it at the next prompt (>) by typing OOPS and the correct
+word. For example, if you typed GIVE THE MAGAXINE TO MS. PENTREATH, and
+the computer responded "[I don't know the word 'magaxine']," you could
+type OOPS MAGAZINE instead of typing the whole sentence again.
+
+QUIT - This lets you stop. If you want to save your place before
+stopping, follow the instructions in the "Starting and Stopping" section
+on page N. (You can use the short word Q instead of QUIT.)
+
+RESTART - This stops the story and starts it over from the beginning.
+
+RESTORE - This lets you continue from any point where you used the SAVE
+command. See "Starting and Stopping" on page N for details.
+
+SAVE - This puts a "snapshot" of your place in the story onto a storage
+disk. You can use the RESTORE command at a later time to continue from the
+same place. See "Starting and Stopping" on page N for details.
+
+SCORE - The computer will give you a report on what you have done so far
+in the story and what you need to do to finish.
+
+SCRIPT - This command tells your printer to begin making a transcript of
+the story as you play. A transcript may help you remember, but you don't
+need it to play. It will work only on some computers; read your
+Reference Card for details.
+
+SUPERBRIEF - After this command, the computer will give you the briefest
+kind of descriptions.  For details, read about the BRIEF command.
+
+TIME - This tells you the time of night in the story.
+
+UNSCRIPT - This commands your printer to stop making a transcript.
+
+VERBOSE - After this command, the computer will give you the wordiest
+kind of descriptions.  For details, read about the BRIEF command.
+
+VERSION - The computer responds by showing you the release number and
+the serial number of your copy of the story. Please send us this
+information if you ever report a "bug" in the story.
+
+WAIT - This will make time pass in the story while you do nothing. For
+example, if you meet a ghost, you might WAIT to see what it will do; or
+if you listen to a tape, you might WAIT to hear what it says. (You can
+use the short word Z instead of WAIT.)			
+
+@Unnumbered[Tips for New Players]
+
+1. EXAMINE anything and everything that you come across in the story.
+Many things that you'll discover in @U[Moonmist] are important because
+they give you clues about the puzzles you want to solve.
+
+2. TAKE anything that you can in the story. Most things that you
+can pick up give you clues that help you solve the mystery.
+
+3. Save your place often. That way, if you mess up or get "killed," you
+won't have to start over from the beginning. See page N for
+instructions.
+
+4. Read the story carefully! There are often clues in the descriptions
+of places and things.  It helps to examine or read anything that might
+be important.  Even a silly or dangerous action may give you a clue, and
+it might even be fun!  You can always save your place first if you want.
+Here's an example: 
+@Verbatim[
+	>ASK THE MAID ABOUT THE WINE CELLAR
+
+	"I never go down there myself.  I work on the first floor
+	only." She continues to fidget nervously with the mirror.]
+
+Here you have a clue that maybe asking someone else about the wine
+cellar (maybe the butler?) would be more helpful, and that maybe you
+could ask the maid about the mirror.
+
+5. Draw a complete map of the castle and its grounds.  The map
+in your @U[Moonmist] package shows only the rooms on the ground floor of the castle.
+A complete map would have @U[all] locations (including upstairs rooms) and
+the directions that connect them together. When you find
+yourself in a new location, make a note of any interesting things
+there. (See the small sample map that goes along with the sample
+transcript on page N.) There are 10 possible directions -- NORTH, SOUTH,
+EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST, UP, and DOWN --
+plus IN and OUT.
+
+6. Unlike other "adventure games" you may have played, there are many
+possible ways to finish @U[Moonmist]. If you get stuck on one
+puzzle, move on to another. Some puzzles have more than one solution,
+and you may not need to solve other puzzles at all. Sometimes you will have
+to solve one puzzle in order to get the thing(s) or information you
+need to solve another puzzle.  Remember to keep asking different people
+about different things -- they may give you clues or information.
+
+7. You'll like playing @U[Moonmist] with a friend, because you may find
+a certain puzzle hard while a friend may find it easy.  So two or more
+players can often have more fun, and do better, than one player alone.
+
+8. If you really have difficulty, you can buy a hint
+booklet and a complete map, either at a store or by using the order form in
+your @U[Moonmist] package. You don't @U{need} this booklet to enjoy the
+story, but it will make solving the mystery easier.
+
+9. Read the sample transcript on page N to get a feel for how Infocom's
+interactive fiction works.  The computer will @U[not] understand questions
+or statements, such as "When did you go to sleep?" or "I want some root beer."
+
+10. You can word a command in many different ways. For example, if you
+wanted to pick up a shiny hammer that was sitting on a table, you could
+type any of the following:
+@Verbatim[
+	>TAKE HAMMER
+
+   	>TAKE THE HAMMER FROM THE TABLE
+
+   	>PICK UP THE SHINY HAMMER
+
+	>GET THE HAMMER]
+
+If you type a sentence that the computer doesn't recognize, try
+re-wording the sentence or using other words that mean the same thing.  If
+the computer still doesn't recognize your sentence, you are almost
+certainly trying to do something that you don't need to do.
+
+@Unnumbered[Common Complaints]
+
+The computer will complain if you type a command that confuses it
+completely.  It will then ignore the rest of the input line, if there
+are any more commands. (Certain events, such as being attacked or
+walking into a wall, may also cause the computer to ignore the rest of
+your commands, since the event may have changed your situation
+drastically.)
+
+Here are some of the computer's complaints:
+
+I don't know the word "________". The word you typed is not in the
+story's list of words. Sometimes you can use another word that means the
+same. If not, the computer probably can't understand what you were
+trying to do.
+
+Sorry, I don't understand the word "________" when you use it that way.
+The computer knows the word you typed, but couldn't understand it in
+that sense. Usually this is because the computer knows the word as a
+different part of speech. For example, if you type LOWER THE FLAG, you
+are using LOWER as a verb, but the computer might know LOWER only as an
+adjective, as in PRESS THE LOWER BUTTON.
+
+I think there's a verb missing in that sentence! Unless you are
+answering a question, each sentence must have a verb (or one of the
+special commands).
+
+I think there's a noun missing in that sentence! This usually means your
+sentence was incomplete, such as EAT THE BLUE or PUT THE BOOK IN THE.
+
+I found too many nouns in that sentence! An example is PUT THE SOUP IN
+THE BOWL WITH THE LADLE, which has three noun "phrases," one more than
+the computer can digest in a single action.
+
+I beg your pardon?  You pressed the RETURN (or ENTER) key without typing
+anything.
+
+You can't see any ________ here.  The thing in your sentence was not
+visible. It may be somewhere else, or inside a closed
+container. 
+
+You can't use more than one direct [or indirect] object with "________."
+ You can use multiple objects (that is, nouns or noun phrases separated
+with AND or a comma) or the word ALL only with certain verbs, like TAKE,
+DROP, and PUT.  You can't use more than one object with most verbs, like
+SHOOT; so you can't SHOOT THE GHOST AND THE DART GUN.
+
+I assume you mean the ________.  You typed a pronoun, or an adjective
+without a noun, or a command to a person without their name.
+The computer is just telling you what it thinks you meant.
+
+You can't go in that direction.  There was no way to go in the direction
+you tried.
+
+Sorry, but I don't understand.  Please reword that or try something
+else.  The computer thought the sentence you typed was nonsense, such as
+GIVE HIM WITH LANTERN.  Or, you may have typed a reasonable sentence but
+used a syntax that the computer does not recognize, such as WAVE OVER
+THE FENCE.  Try typing what you want to do in a different way.
+			
+@Unnumbered[We're Never Satisfied]
+
+Here at Infocom, we take great pride in the quality of our stories,
+honing and perfecting them down to the tiniest detail. Even after
+they're in your hands, we still want to make them better.
+
+Your input is important. No matter how much testing we do, it seems that some
+"bugs" never crawl into view until thousands of you begin doing
+wild and crazy things in the story. If you find a "bug," or if
+you think a certain puzzle was too hard or too easy, or if you have some
+other suggestion, or if you'd just like to tell us your opinion of the
+story, write to us! We love every excuse to stop working, and a
+letter from you would be a perfect excuse! Write to:
+@Verbatim[
+	Infocom, Inc.
+	125 CambridgePark Drive
+	Cambridge, MA 02140 
+	Attn: BOLITHO]
+
+@Heading[If You Have Technical Problems]
+
+You can call the Infocom Technical Support Team to report "bugs" and
+technical problems, but @U{not} for hints to solve puzzles, at (617)
+576-3190. If your disk fails to work within ninety (90) days after
+purchase, we will replace it at no charge. Otherwise, we will replace it
+for a fee of five dollars (U.S. funds). If you call to report a "bug,"
+please provide your release number, which you can find by typing the
+command VERSION. Please mail us your registration card if you'd like to
+be on our mailing list and receive our newsletter, @U{The New Zork
+Times.}
+
+@Heading[Copyright and Warranty Information]
+
+@U[Limited Warranty]
+
+This software product and the attached instructional materials are sold
+"AS IS," without warranty as to their performance. The entire risk as to
+the quality and performance of the computer software program is assumed
+by the user.
+
+However, to the original purchaser of a disk prepared by Infocom and
+carrying the Infocom label on the disk jacket, Infocom, Inc. warrants
+the medium on which the program is recorded to be free from defects in
+materials and faulty workmanship under normal use and service for a
+period of ninety (90) days from the date of purchase. If during this
+period a defect on the medium should occur, the medium may be returned
+to Infocom, Inc. or to an authorized Infocom, Inc. dealer, and Infocom,
+Inc. will replace the medium without charge to you. Your sole and
+exclusive remedy in the event of a defect is expressly limited to
+replacement of the medium as provided above. This warranty gives you
+specific legal rights and you may also have other rights which vary from
+state to state.
+   
+THE ABOVE WARRANTIES FOR GOODS ARE IN LIEU OF ALL WARRANTIES, EXPRESS,
+IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AND
+OF ANY OTHER WARRANTY OBLIGATION ON THE PART OF INFOCOM, INC. SOME
+STATES DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS,
+SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.  IN NO EVENT SHALL
+INFOCOM, INC. OR ANYONE ELSE WHO HAS BEEN INVOLVED IN THE CREATION AND
+PRODUCTION OF THIS COMPUTER SOFTWARE PROGRAM BE LIABLE FOR INDIRECT,
+SPECIAL, OR CONSEQUENTIAL DAMAGES, SUCH AS, BUT NOT LIMITED TO, LOSS OF
+ANTICIPATED PROFITS OR BENEFITS RESULTING FROM THE USE OF THIS PROGRAM,
+OR ARISING OUT OF ANY BREACH OF THIS WARRANTY. SOME STATES DO NOT ALLOW
+THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO
+THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+N.B. After the warranty period, a defective Infocom disk may be returned
+to Infocom, Inc. with a check or money order for $5.00 U.S. funds for
+replacement.
+
+@U[Copyright]
+
+The enclosed software product is copyrighted and all rights are reserved
+by Infocom, Inc. It is published exclusively by Infocom, Inc. The
+distribution and sale of this product are intended for the use of the
+original purchaser only and for use only on the computer system
+specified. Lawful users of this program are hereby licensed only to read
+the program from its medium into memory of a computer solely for the
+purpose of executing the program. Copying (except for one backup copy on
+those systems which provide for it -- see Reference Card), duplicating,
+selling, or otherwise distributing this product is a violation of the
+law.
+
+This manual and all other documentation contained herein are copyrighted and
+all rights reserved by Infocom, Inc. These documents may not, in whole or in
+part, be copied, photocopied, reproduced, translated, or reduced to any
+electronic medium or machine-readable form without prior consent, in writing,
+from Infocom, Inc.
+
+Willful violations of the Copyright Law of the United States can result
+in civil damages of up to $50,000 in addition to actual damages, plus
+criminal penalties of up to one year imprisonment and/or $10,000 fine.
+
+@U[Moonmist] is a trademark of Infocom, Inc.  @U[The Witness] and 
+@U[Seastalker] are registered trademarks of Infocom, Inc.
+
+(c) 1986 Infocom, Inc.
+
+Printed in U.S.A.
+
+@Unnumbered[Quick Reference Guide]
+
+1. To start the story ("boot up"), see the separate Reference Card in
+your @U[Moonmist] package.
+
+2. When you see the prompt (>) on your screen, the computer is waiting
+for your command. There are four kinds of sentences or commands that
+the computer recognizes:
+@Verbatim[
+	A. Direction commands: To move from place to place, just type
+	the direction you want to go: NORTH, SOUTH, EAST, WEST,
+	NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST, UP, DOWN, IN, or
+	OUT.  Or type GO TO (a place).
+
+	B. Actions: Just type whatever you want to do. Some examples:
+	READ THE BOOK or OPEN THE DOOR or LOOK THROUGH THE WINDOW or
+	GIVE THE BALL TO THE CAT. Once you're familiar with simple
+	commands, try the more complex ones described in 
+        "How to 'Talk' to Infocom's Interactive Fiction" on page N.
+
+	C. Commands given to people: To talk to characters 
+	in the story, type their name, then a comma, then what you want 
+	them to do. For example: FRED, GIVE ME THE AXE or OLD MAN,
+	DESCRIBE THE GHOST.
+
+	D. Special commands: Some commands, such as INVENTORY or
+	VERSION, give you specific information or affect your output.
+	A list of these appears in the "Special Commands" section on 
+	page N.]
+
+3. Important! After typing your sentence or command, you must press the
+RETURN (or ENTER) key before the computer will respond.
+
+4. On most computers, your screen will display a special line called the
+status line. It tells you the name of the place you're in and the time
+of night in the story.
+
+5. You can pick up and carry many of the things you'll find in the story.
+For example, if you type TAKE THE LARGE BOOK, you will be carrying it.
+Type INVENTORY to see a list of the things you are carrying.
+
+6. When you want to stop, save your place for later, or start over, read
+the "Starting and Stopping" section on page N.
+
+7. If you have trouble, look at a specific section of the manual for
+more detailed instructions.

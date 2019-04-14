@@ -1,0 +1,302 @@
+
+;COMPARISON OF SS:<MOONMIST>PARSER.ZIL.466 AND SS:<MOONMIST>PARSER.ZIL.467
+;OPTIONS ARE    /1
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-2 (55185)
+<ROUTINE ORPHAN-MERGE ("AUX" (CNT -1) TEMP VERB BEG END (ADJ <>) WRD) 
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-2 (55185)
+<ROUTINE ORPHAN-MERGE ("AUX" (CNT -1) TEMP VERB BEG END
+		       (ADJ <>) (ADJB <>) (VRB <>) (NOUN <>) ADJE WRD) 
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-4 (55279)
+   <COND (<OR <EQUAL? <WT? <SET WRD <GET <GET ,P-ITBL ,P-VERBN> 0>>
+			   ,PS?VERB ,P1?VERB>
+		      <GET ,P-OTBL ,P-VERB>>
+	      <WT? .WRD ,PS?ADJECTIVE>>
+	  <SET ADJ T>)
+	 (<AND <WT? .WRD ,PS?OBJECT ,P1?OBJECT>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-5 (55323)
+   <COND (<SET WRD <GET <GET ,P-ITBL ,P-VERBN> 0>>
+	  <COND (<EQUAL? <WT? .WRD ,PS?VERB ,P1?VERB>
+			 <GET ,P-OTBL ,P-VERB>>
+		 <SET VRB T>)>
+	  <COND (<WT? .WRD ,PS?ADJECTIVE>
+		 <SET ADJ T>)>
+	  <COND (<WT? .WRD ,PS?OBJECT>
+		 <SET NOUN T>)>)>
+   <COND (<AND <NOT .VRB> ;"convert apparent verb into noun clause"
+	       <NOT .ADJ>
+	       <WT? .WRD ,PS?OBJECT ,P1?OBJECT>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-13 (55584)
+	  <PUT ,P-ITBL ,P-NC1 <REST ,P-LEXV 2>>
+	  <PUT ,P-ITBL ,P-NC1L <REST ,P-LEXV 6>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-19 (55793)
+	  <PUT ,P-ITBL ,P-NC1 <REST ,P-LEXV <* 2 ,P-LEXSTART>>>
+	  <PUT ,P-ITBL ,P-NC1L <REST ,P-LEXV <+ ,P-WORDLEN <* 2 ,P-LEXSTART>>>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-18 (55773)
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-24 (56029)
+	       <NOT .VRB>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-22 (55908)
+	  <COND (<OR <ZERO? <SET TEMP <GET ,P-ITBL ,P-PREP1>>>
+		     <EQUAL? .TEMP <GET ,P-OTBL ,P-PREP1>>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-29 (56184)
+	  <COND (<EQUAL? <GET ,P-ITBL ,P-PREP1>
+			 0
+			 <GET ,P-OTBL ,P-PREP1>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-25 (56028)
+			<PUT ,P-OTBL ,P-NC1 <REST ,P-LEXV 2>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-33 (56278)
+			<PUT ,P-ITBL ,P-NC1 <REST ,P-LEXV <* 2 ,P-LEXSTART>>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-27 (56111)
+			       <PUT ,P-ITBL ,P-NC1L <REST ,P-LEXV 6>>)>
+			<COND (<ZERO? ,P-NCN> <SETG P-NCN 1>)>)
+		       (T
+			<PUT ,P-OTBL ,P-NC1 <GET ,P-ITBL ,P-NC1>>
+			;<PUT ,P-OTBL ,P-NC1L <GET ,P-ITBL ,P-NC1L>>)>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-35 (56377)
+			       <PUT ,P-ITBL ,P-NC1L
+				    <REST ,P-LEXV <+ ,P-WORDLEN
+						     <* 2 ,P-LEXSTART>>>>)>
+			<COND (<ZERO? ,P-NCN> <SETG P-NCN 1>)>)>
+		 <PUT ,P-OTBL ,P-NC1 <GET ,P-ITBL ,P-NC1>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-35 (56420)
+	  <COND (<OR <ZERO? <SET TEMP <GET ,P-ITBL ,P-PREP1>>>
+		     <EQUAL? .TEMP <GET ,P-OTBL ,P-PREP2>>>
+		 <COND (.ADJ
+			<PUT ,P-ITBL ,P-NC1 <REST ,P-LEXV 2>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-43 (56675)
+	  <COND (<EQUAL? <GET ,P-ITBL ,P-PREP1>
+			 <>
+			 <GET ,P-OTBL ,P-PREP2>>
+		 <COND (<OR .ADJ
+			    <AND <ZERO? ,P-NCN> .NOUN>>
+			<PUT ,P-ITBL ,P-NC1 <REST ,P-LEXV <* 2 ,P-LEXSTART>>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-40 (56623)
+			       <PUT ,P-ITBL ,P-NC1L <REST ,P-LEXV 6>>)>)>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-50 (56909)
+			       <PUT ,P-ITBL ,P-NC1L
+				    <REST ,P-LEXV <+ ,P-WORDLEN
+						     <* 2 ,P-LEXSTART>>>>)>)>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-51 (56955)
+		 <COND (.ADJ <SET BEG <REST ,P-LEXV 2>> <SET ADJ <>>)>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-63 (57293)
+		 <COND (.ADJ
+			<SET BEG <REST ,P-LEXV <* 2 ,P-LEXSTART>>>
+			<PUT ,P-ITBL ,P-NC1 .BEG>
+			<SET ADJ <>>)>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-54 (57064)
+			 <SET WRD <GET .BEG 0>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-69 (57456)
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-56 (57123)
+				<COND (.ADJ <CLAUSE-WIN .ADJ> <RETURN>)
+				      (T <SETG P-ACLAUSE <>> <RFALSE>)>)
+			       (<OR <EQUAL? .WRD ,W?ALL ;,W?EVERYT ,W?ONE> 
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-70 (57487)
+				<COND (.ADJB <CLAUSE-WIN .ADJB .ADJE> <RETURN>)
+				      (T
+				       <SETG P-ACLAUSE <>>
+				       <RFALSE>)>)>
+			 <SET WRD <GET .BEG 0>>
+			 <COND (<OR <EQUAL? .WRD ,W?ALL ,W?ONE> 
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-62 (57390)
+				<SET ADJ .WRD>)
+			       (<EQUAL? .WRD ,W?ONE>
+				<CLAUSE-WIN .ADJ>
+				<RETURN>)
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-79 (57804)
+				<COND (<NOT .ADJB> <SET ADJB .BEG>)>
+				<SET ADJ .WRD>
+				<SET ADJE <REST .BEG ,P-WORDLEN>>)
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-68 (57583)
+				<COND (<EQUAL? .WRD ,P-ANAM>
+				       <CLAUSE-WIN .ADJ>)
+				      (T
+				       <CLAUSE-WIN>)>
+				<RETURN>)>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-84 (58007)
+				<COND (<AND ,P-ANAM
+					    <NOT <EQUAL? .WRD ,P-ANAM>>>
+				       <SETG P-ANAM <>>
+				       <SET ADJB <GET ,P-ITBL ,P-NC1>>
+				       <SET ADJE .END>)>)>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-77 (57811)
+				<PUT ,P-ITBL ,P-NC1 <BACK .BEG 4>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-93 (58282)
+				<PUT ,P-ITBL ,P-NC1 <BACK .BEG ,P-WORDLEN>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-92 (58285)
+<ROUTINE CLAUSE-WIN ("OPT" (ADJ <>)) 
+	<COND (.ADJ
+	       <PUT ,P-ITBL ,P-VERB <GET ,P-OTBL ,P-VERB>>)
+	      (ELSE <SET ADJ T>)>
+	<PUT ,P-CCTBL ,CC-SBPTR ,P-ACLAUSE>
+	<PUT ,P-CCTBL ,CC-SEPTR <+ ,P-ACLAUSE 1>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-108 (58765)
+<ROUTINE CLAUSE-WIN ("OPT" (ADJB <>) (ADJE <>)) 
+	<COND (.ADJB
+	       <PUT ,P-ITBL ,P-VERB <GET ,P-OTBL ,P-VERB>>)>
+	<PUT ,P-CCTBL ,CC-BEG ,P-ACLAUSE>
+	<PUT ,P-CCTBL ,CC-END <+ ,P-ACLAUSE 1>>
+	<PUT ,P-CCTBL ,CC-IBEG .ADJB>
+	<PUT ,P-CCTBL ,CC-IEND .ADJE>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-99 (58538)
+	       <PUT ,P-CCTBL ,CC-OCLAUSE ,P-OCL1>)
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-116 (59063)
+	       <PUT ,P-CCTBL ,CC-CLAUSE ,P-OCL1>)
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 7-101 (58597)
+	       <PUT ,P-CCTBL ,CC-OCLAUSE ,P-OCL2>)>
+	<CLAUSE-COPY ,P-OTBL ,P-OTBL .ADJ>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 7-118 (59121)
+	       <PUT ,P-CCTBL ,CC-CLAUSE ,P-OCL2>)>
+	<CLAUSE-COPY ,P-OTBL ,P-OTBL>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-13 (65387)
+	       <PUT ,P-CCTBL ,CC-SBPTR ,P-NC2>
+	       <PUT ,P-CCTBL ,CC-SEPTR ,P-NC2L>
+	       <PUT ,P-CCTBL ,CC-OCLAUSE ,P-OCL2>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 10-13 (65905)
+	       <PUT ,P-CCTBL ,CC-BEG ,P-NC2>
+	       <PUT ,P-CCTBL ,CC-END ,P-NC2L>
+	       <PUT ,P-CCTBL ,CC-CLAUSE ,P-OCL2>
+	       <PUT ,P-CCTBL ,CC-IBEG <>>
+	       <PUT ,P-CCTBL ,CC-IEND <>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-18 (65584)
+	       <PUT ,P-CCTBL ,CC-SBPTR ,P-NC1>
+	       <PUT ,P-CCTBL ,CC-SEPTR ,P-NC1L>
+	       <PUT ,P-CCTBL ,CC-OCLAUSE ,P-OCL1>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 10-20 (66169)
+	       <PUT ,P-CCTBL ,CC-BEG ,P-NC1>
+	       <PUT ,P-CCTBL ,CC-END ,P-NC1L>
+	       <PUT ,P-CCTBL ,CC-CLAUSE ,P-OCL1>
+	       <PUT ,P-CCTBL ,CC-IBEG <>>
+	       <PUT ,P-CCTBL ,CC-IEND <>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-157 (70200)
+"pointers used by CLAUSE-COPY (source/destination beginning/end pointers):"
+<CONSTANT CC-SBPTR 0>
+<CONSTANT CC-SEPTR 1>
+<CONSTANT CC-OCLAUSE 2>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-2 (70853)
+"CLAUSE-COPY"
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-164 (70388)
+<ROUTINE CLAUSE-COPY (SRC DEST "OPT" (INSRT <>)
+		      "AUX" OCL BEG END BB EE OBEG CNT B E)
+	<SET BB <GET ,P-CCTBL ,CC-SBPTR>>
+	<SET EE <GET ,P-CCTBL ,CC-SEPTR>>
+	<SET OCL <GET ,P-CCTBL ,CC-OCLAUSE>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-6 (70908)
+"pointers used by CLAUSE-COPY (source/destination beginning/end pointers)"
+<CONSTANT CC-BEG 0>	"slot in source to start from"
+<CONSTANT CC-END 1>	"slot in source to end at"
+<CONSTANT CC-CLAUSE 2>	"which orphan table to use"
+<CONSTANT CC-IBEG 3>	"insertion beginning (from lexv)"
+<CONSTANT CC-IEND 4>	"insertion ending"
+"do something about duplicate words in clause?"
+<ROUTINE CLAUSE-COPY (SRC DEST
+		      "AUX" (IBEG <>) IEND OCL BEG END BB EE OBEG CNT B E)
+	<SET BB <GET ,P-CCTBL ,CC-BEG>>
+	<SET EE <GET ,P-CCTBL ,CC-END>>
+	<SET OCL <GET ,P-CCTBL ,CC-CLAUSE>>
+	<SET IBEG <GET ,P-CCTBL ,CC-IBEG>>
+	<SET IEND <GET ,P-CCTBL ,CC-IEND>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-173 (70698)
+		<COND (<EQUAL? .BEG .END> <RETURN>)>
+		<COND (<AND .INSRT
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-26 (71663)
+		<COND (<EQUAL? .BEG .END>
+		       <COND (<AND .IBEG <NOT ,P-ANAM>>
+			      <CLAUSE-SUBSTRUC .IBEG .IEND>)>
+		       <RETURN>)>
+		<COND (<AND .IBEG
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-176 (70799)
+		       <COND (<EQUAL? .INSRT T>
+			      <SET B <GET ,P-ITBL ,P-NC1>>
+			      <SET E <GET ,P-ITBL ,P-NC1L>>
+			      <REPEAT ()
+				      <COND (<EQUAL? .B .E> <RETURN>)>
+				      <CLAUSE-ADD <GET .B 0>>
+				      <SET B <REST .B ,P-WORDLEN>>>)
+			     (ELSE
+			      <COND (<NOT <EQUAL? .INSRT <GET .OCL 1>>>
+				     <CLAUSE-ADD .INSRT>)>
+			      <CLAUSE-ADD ,P-ANAM>)>)
+		      (ELSE
+		       <CLAUSE-ADD <GET .BEG 0>>)>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-32 (71858)
+		       <CLAUSE-SUBSTRUC .IBEG .IEND>)>
+		<CLAUSE-ADD <GET .BEG 0>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-190 (71278)
+	<COND (<AND <EQUAL? .SRC .DEST>
+		    <G? .OBEG 0>
+		    <L? 0 <SET CNT <- <GET .OCL ,P-MATCHLEN> .OBEG>>>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-35 (71966)
+	<COND (<AND <G? .OBEG 0>
+		    <G? <SET CNT <- <GET .OCL ,P-MATCHLEN> .OBEG>> 0>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-209 (71811)
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-53 (72472)
+<ROUTINE CLAUSE-SUBSTRUC (B E)
+	 <REPEAT ()
+		 <COND (<EQUAL? .B .E> <RETURN>)>
+		 <CLAUSE-ADD <GET .B 0>>
+		 <SET B <REST .B ,P-WORDLEN>>>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-210 (71870)
+	<SET OCL <GET ,P-CCTBL ,CC-OCLAUSE>>
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-60 (72679)
+	<SET OCL <GET ,P-CCTBL ,CC-CLAUSE>>
+***************
+
+**** FILE SS:<MOONMIST>PARSER.ZIL.466, 10-218 (72130)
+	       <PUT .OCL ,P-MATCHLEN .PTR>)>>   
+ 
+**** FILE SS:<MOONMIST>PARSER.ZIL.467, 11-68 (72938)
+	       <PUT .OCL ,P-MATCHLEN .PTR>)>>
+***************
+

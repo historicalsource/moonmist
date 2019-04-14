@@ -2039,10 +2039,13 @@ CHE ,GHOST-NEW " is wearing heavy white makeup with black eyes and lips. ">
 	<RTRUE>)
        (<VERB? SMILE>		;"friendly"
 	<RTRUE>)
-       (<SPEAKING-VERB? ,GHOST-NEW>			;"friendly"
+       (<SPEAKING-VERB? ,GHOST-NEW>		;"friendly"
 	<RTRUE>)
-       (<VERB? ARREST MUNG PUSH SLAP STOP TAKE YELL>	;"unfriendly"
-	<RETURN 2>)>>
+       (<VERB? ARREST MUNG PUSH SLAP STOP YELL>	;"unfriendly"
+	<RETURN 2>)
+       (<VERB? TAKE>		;"unfriendly"
+	<COND (<NOT <FSET? ,GHOST-NEW ,MUNGBIT>>
+	       <RETURN 2>)>)>>
 
 <GLOBAL VILLAIN-KNOWN?:FLAG <>>
 
@@ -2067,10 +2070,12 @@ CHE ,GHOST-NEW " is wearing heavy white makeup with black eyes and lips. ">
 		      <PUTB <GETPT ,HANDS ,P?ADJECTIVE>
 			    ,OTHER-POSS-POS .ADJ>
 		      <PUTB <GETPT ,EYE ,P?ADJECTIVE>
+			    ,OTHER-POSS-POS .ADJ>
+		      <PUTB <GETPT ,OTHER-OUTFIT ,P?ADJECTIVE>
 			    ,OTHER-POSS-POS .ADJ>)>)>
 	<THIS-IS-IT ,VILLAIN-PER>
 	<FSET ,VILLAIN-PER ,MUNGBIT>
-	<PUTP ,VILLAIN-PER ,P?LDESC 19 ;"out cold" ;<GETP ,GHOST-NEW ,P?LDESC>>
+	<PUTP ,VILLAIN-PER ,P?LDESC 19 ;"out cold">
 	<SETG VILLAIN-KNOWN? T>
 	<TELL
 "When you remove the " D ,COSTUME ", you discover " D ,VILLAIN-PER
@@ -2117,34 +2122,35 @@ CHE ,GHOST-NEW " is wearing heavy white makeup with black eyes and lips. ">
 	<SETG CLOCK-WAIT T>
 	<TELL "(There is no wig!)" CR>)
        (<VERB? EXAMINE LOOK-INSIDE>
+	<COND (<NOT <NOUN-USED? ,W?WIG>>
+	       <DESCRIBE-GOWN>
+	       <COND (<EQUAL? <LOC ,COSTUME> ,GHOST-NEW ,VILLAIN-PER>
+		      <TELL " It's on">)
+		     (T <TELL
+" When you hold it up, you can see it would fit">)>
+	       <TELL " a ">
+	       <COND (<EQUAL? ,VARIATION ,LORD-C ,FRIEND-C ,DOCTOR-C>
+		      <TELL "person of average height.">)
+		     (T ;<EQUAL? ,VARIATION ;,DEALER-C ,PAINTER-C ;,OFFICER-C>
+		      <TELL "tall person.">)>
+	       <CRLF>)>
 	<COND (<AND <NOT <NOUN-USED? ,W?GOWN>>
 		    <NOT <EQUAL? ,VARIATION ,LORD-C>>>
 	       <TELL
 "It's obvious that the wig was designed to resemble " 'LOVER "'s long, flowing
-hair.">
+hair." CR>
 	       <COND (<NOT <EQUAL? <LOC ,COSTUME> ,GHOST-NEW ,VILLAIN-PER>>
-		      <TELL " Inside, you notice several individual ">
+		      <TELL "Inside, you notice several individual ">
 		      <COND (<EQUAL? ,VARIATION ,FRIEND-C> <TELL "red">)
 			    (<EQUAL? ,VARIATION ,DOCTOR-C> <TELL "grayish">)
-			    ;(<EQUAL?,VARIATION ,DEALER-C><TELL "sandy-brown">)
+			    ;(<EQUAL?,VARIATION,DEALER-C><TELL "sandy-brown">)
 			    (T ;<EQUAL? ,VARIATION ,PAINTER-C> <TELL "tawny">)
-			    ;(<EQUAL?,VARIATION,OFFICER-C><TELL "dark blond">)>
+			    ;(<EQUAL?,VARIATION,OFFICER-C><TELL"dark blond">)>
 		      <TELL " hairs, the same color as ">
 		      <COND ;(<EQUAL? ,VARIATION ,LORD-C> <TELL 'LOVER>)
 			    (T <TELL D <GET ,CHARACTER-TABLE ,VARIATION>>)>
-		      <TELL "'s hair.">)>
-	       <CRLF>)>
-	<COND (<NOT <NOUN-USED? ,W?WIG>>
-	       <DESCRIBE-GOWN>
-	       <COND (<EQUAL? <LOC ,COSTUME> ,GHOST-NEW ,VILLAIN-PER>
-		      <TELL " It's on a ">)
-		     (T <TELL
-" When you hold it up, you can see it would fit a ">)>
-	       <COND (<EQUAL? ,VARIATION ,LORD-C ,FRIEND-C ,DOCTOR-C>
-		      <TELL "person of average height." CR>)
-		     (T ;<EQUAL? ,VARIATION ;,DEALER-C ,PAINTER-C ;,OFFICER-C>
-		      <TELL "tall person." CR>)>)>
-	<CONGRATS ,COSTUME>
+		      <TELL "'s hair." CR>
+		      <CONGRATS ,COSTUME>)>)>
 	<RTRUE>)
        ;(<VERB? FIND>
 	<COND (<IN? ,COSTUME ,HERE>
@@ -2157,7 +2163,9 @@ hair.">
 	       <PERFORM ,V?UNDRESS ,GHOST-NEW>
 	       <RTRUE>)>)
        (<OR <VERB? WEAR>
-	    <AND <VERB? PUT> <FSET? ,PRSI ,PERSONBIT>>>
+	    <AND <VERB? PUT>
+		 <T? ,PRSI>
+		 <FSET? ,PRSI ,PERSONBIT>>>
 	<WEAR-SCARE>)>>
 
 <ROUTINE WEAR-SCARE ()

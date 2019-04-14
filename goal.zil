@@ -562,6 +562,7 @@ hop into " 'YOUR-BATHROOM ".|">
 		     <OR <VERB? ASK-FOR>
 			 <T? <GET .GT ,GOAL-S>>>
 		     <NOT <VERB? SORRY TAKE THANKS>>
+		     <NOT <VERB? YES NO>>
 		     <NOT <DOBJ? LUGGAGE DINNER>>>
 		<BUTLER-SORRY>
 		<RFALSE>)
@@ -1754,6 +1755,8 @@ CHE ,GOAL-PERSON " says, \"I'm dead tired. Good night.\"" CR>)>)
 		      <PUTB <GETPT ,HANDS ,P?ADJECTIVE>
 			    ,OTHER-POSS-POS ,A?G\'S>
 		      <PUTB <GETPT ,EYE ,P?ADJECTIVE>
+			    ,OTHER-POSS-POS ,A?G\'S>
+		      <PUTB <GETPT ,OTHER-OUTFIT ,P?ADJECTIVE>
 			    ,OTHER-POSS-POS ,A?G\'S>)>)>
 	<FSET ,COSTUME ,NDESCBIT>
 	<FCLEAR ,COSTUME ,TAKEBIT>

@@ -1,0 +1,200 @@
+	.FSTR FSTR?1,"the "	;1294	648
+	.FSTR FSTR?2,", "	;769	770
+	.FSTR FSTR?3,"and "	;496	249
+	.FSTR FSTR?4,"you "	;486	244
+	.FSTR FSTR?5,". "	;385	386
+	.FSTR FSTR?6,"You "	;345	116
+	.FSTR FSTR?7,"that "	;330	111
+	.FSTR FSTR?8,"The "	;318	107
+	.FSTR FSTR?9,"to "	;312	313
+	.FSTR FSTR?10,"It's "	;265	54
+	.FSTR FSTR?11,"with "	;261	88
+	.FSTR FSTR?12,"of "	;228	229
+	.FSTR FSTR?13,"I "	;228	229
+	.FSTR FSTR?14,"your "	;210	71
+	.FSTR FSTR?15,"was "	;196	99
+	.FSTR FSTR?16,"There's "	;192	25
+	.FSTR FSTR?17,"in "	;179	180
+	.FSTR FSTR?18,"for "	;170	86
+	.FSTR FSTR?19,"can't "	;165	34
+	.FSTR FSTR?20,"don't "	;155	32
+	.FSTR FSTR?21,"is "	;149	150
+	.FSTR FSTR?22,"from "	;147	50
+	.FSTR FSTR?23,"about "	;132	34
+	.FSTR FSTR?24,"I'm "	;132	34
+	.FSTR FSTR?25,"just "	;120	41
+	.FSTR FSTR?26,"it "	;112	113
+	.FSTR FSTR?27,"something "	;112	15
+	.FSTR FSTR?28,"but "	;110	56
+	.FSTR FSTR?29,"her "	;108	55
+	.FSTR FSTR?30,"You're "	;105	16
+	.FSTR FSTR?31,"have "	;102	35
+	.FSTR FSTR?32,"ghost "	;100	26
+	.FSTR FSTR?33,"you're "	;96	17
+	.FSTR FSTR?34,"not "	;90	46
+	.FSTR FSTR?35,"Lionel's "	;90	11
+	.FSTR FSTR?36,"can "	;88	45
+	.FSTR FSTR?37,"this "	;87	30
+	.FSTR FSTR?38,"down "	;84	29
+	.FSTR FSTR?39,"This "	;84	22
+	.FSTR FSTR?40,"nothing "	;84	15
+	.FSTR FSTR?41,"Please "	;84	15
+	.FSTR FSTR?42,"are "	;82	42
+	.FSTR FSTR?43,"It "	;82	42
+	.FSTR FSTR?44,"secret "	;80	17
+	.FSTR FSTR?45,"figure "	;80	17
+	.FSTR FSTR?46,"one "	;78	40
+	.FSTR FSTR?47,"as "	;77	78
+	.FSTR FSTR?48,"That's "	;77	12
+	.FSTR FSTR?49,"Jack "	;76	20
+	.FSTR FSTR?50,"on "	;75	76
+	.FSTR FSTR?51,"But "	;75	26
+	.FSTR FSTR?52,"she "	;72	37
+	.FSTR FSTR?53,"all "	;72	37
+	.FSTR FSTR?54,"Your "	;72	19
+	.FSTR FSTR?55,"didn't "	;72	13
+	.FSTR FSTR?56,"see "	;70	36
+	.FSTR FSTR?57,"into "	;69	24
+	.FSTR FSTR?58,"find "	;69	24
+	.FSTR FSTR?59,"would "	;68	18
+	.FSTR FSTR?60,"looks "	;68	18
+	.FSTR FSTR?61,"his "	;66	34
+	.FSTR FSTR?62,"you've "	;66	12
+	.FSTR FSTR?63,"looking "	;66	12
+	.FSTR FSTR?64,"like "	;63	22
+	.FSTR FSTR?65,"know "	;63	22
+	.FSTR FSTR?66,"She "	;63	22
+	.FSTR FSTR?67,"at "	;62	63
+	.FSTR FSTR?68,"says"	;62	32
+	.FSTR FSTR?69,"has "	;62	32
+	.FSTR FSTR?70,"when "	;60	21
+	.FSTR FSTR?71,"what "	;60	21
+	.FSTR FSTR?72,"it's "	;60	16
+	.FSTR FSTR?73,"through "	;60	11
+	.FSTR FSTR?74,"you"	;59	60
+	.FSTR FSTR?75,"here"	;58	30
+	.FSTR FSTR?76,"says "	;57	20
+	.FSTR FSTR?77,"! "	;56	57
+	.FSTR FSTR?78,"too "	;56	29
+	.FSTR FSTR?79,"my "	;55	56
+	.FSTR FSTR?80,"dinner "	;55	12
+	.FSTR FSTR?81,"around "	;55	12
+	.FSTR FSTR?82,"want "	;54	19
+	.FSTR FSTR?83,"time "	;54	19
+	.FSTR FSTR?84,"look "	;54	19
+	.FSTR FSTR?85,"Lionel "	;54	10
+	.FSTR FSTR?86,"door"	;52	27
+	.FSTR FSTR?87,"young "	;52	14
+	.FSTR FSTR?88,"white "	;52	14
+	.FSTR FSTR?89,"think "	;52	14
+	.FSTR FSTR?90,"there "	;52	14
+	.FSTR FSTR?91,"seems "	;52	14
+	.FSTR FSTR?92,"right "	;52	14
+	.FSTR FSTR?93,"never "	;52	14
+	.FSTR FSTR?94,"dinner"	;52	14
+	.FSTR FSTR?95,"What "	;52	14
+	.FSTR FSTR?96,"out "	;50	26
+
+
+;word frequency table of 96 most common words
+
+WORDS::	.TABLE
+	FSTR?1
+	FSTR?2
+	FSTR?3
+	FSTR?4
+	FSTR?5
+	FSTR?6
+	FSTR?7
+	FSTR?8
+	FSTR?9
+	FSTR?10
+	FSTR?11
+	FSTR?12
+	FSTR?13
+	FSTR?14
+	FSTR?15
+	FSTR?16
+	FSTR?17
+	FSTR?18
+	FSTR?19
+	FSTR?20
+	FSTR?21
+	FSTR?22
+	FSTR?23
+	FSTR?24
+	FSTR?25
+	FSTR?26
+	FSTR?27
+	FSTR?28
+	FSTR?29
+	FSTR?30
+	FSTR?31
+	FSTR?32
+	FSTR?33
+	FSTR?34
+	FSTR?35
+	FSTR?36
+	FSTR?37
+	FSTR?38
+	FSTR?39
+	FSTR?40
+	FSTR?41
+	FSTR?42
+	FSTR?43
+	FSTR?44
+	FSTR?45
+	FSTR?46
+	FSTR?47
+	FSTR?48
+	FSTR?49
+	FSTR?50
+	FSTR?51
+	FSTR?52
+	FSTR?53
+	FSTR?54
+	FSTR?55
+	FSTR?56
+	FSTR?57
+	FSTR?58
+	FSTR?59
+	FSTR?60
+	FSTR?61
+	FSTR?62
+	FSTR?63
+	FSTR?64
+	FSTR?65
+	FSTR?66
+	FSTR?67
+	FSTR?68
+	FSTR?69
+	FSTR?70
+	FSTR?71
+	FSTR?72
+	FSTR?73
+	FSTR?74
+	FSTR?75
+	FSTR?76
+	FSTR?77
+	FSTR?78
+	FSTR?79
+	FSTR?80
+	FSTR?81
+	FSTR?82
+	FSTR?83
+	FSTR?84
+	FSTR?85
+	FSTR?86
+	FSTR?87
+	FSTR?88
+	FSTR?89
+	FSTR?90
+	FSTR?91
+	FSTR?92
+	FSTR?93
+	FSTR?94
+	FSTR?95
+	FSTR?96
+	.ENDT
+
+	.ENDI

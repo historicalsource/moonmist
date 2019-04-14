@@ -1,0 +1,299 @@
+
+
+	.FUNCT	RANDOM-PSEUDO
+	EQUAL?	PRSA,V?TELL-ABOUT,V?LOOK-UNDER /FALSE
+	EQUAL?	PRSA,V?LOOK-BEHIND,V?ASK-CONTEXT-ABOUT,V?ASK-ABOUT /FALSE
+	EQUAL?	PRSA,V?SEARCH,V?LOOK-INSIDE,V?EXAMINE \?CCL7
+	CALL	NOTHING-SPECIAL
+	RTRUE	
+?CCL7:	CALL	WONT-HELP
+	RSTACK	
+
+
+	.FUNCT	LUGGAGE-F,RARG=0
+	CALL	REMOTE-VERB?
+	ZERO?	STACK \FALSE
+	EQUAL?	PRSA,V?MOVE,V?TAKE \?CCL5
+	EQUAL?	PRSO,LUGGAGE \?CCL5
+	LOC	LUGGAGE
+	FSET?	STACK,PERSONBIT /FALSE
+?CCL5:	LOC	LUGGAGE
+	FSET?	STACK,PERSONBIT \FALSE
+	CALL	NOT-HOLDING?,LUGGAGE
+	ZERO?	STACK \TRUE
+	RFALSE	
+
+
+	.FUNCT	BROCHURE-F,X
+	EQUAL?	PRSA,V?TELL-ABOUT,V?READ,V?OPEN /?PRG8
+	EQUAL?	PRSA,V?LOOK-UP,V?LOOK-INSIDE,V?EXAMINE /?PRG8
+	EQUAL?	PRSA,V?DESCRIBE,V?ASK-FOR,V?ASK-CONTEXT-FOR /?PRG8
+	EQUAL?	PRSA,V?ASK-CONTEXT-ABOUT,V?ASK-ABOUT,V?ANALYZE \FALSE
+?PRG8:	PRINTI	"[You'll find the "
+	PRINTD	BROCHURE
+	PRINTI	" in your "
+	PRINTD	MOONMIST
+	PRINTR	" package.]"
+
+
+	.FUNCT	BLOWGUN-F
+	EQUAL?	PRSA,V?EXAMINE \?CCL3
+	CALL	QUEUED?,I-SHOT
+	ZERO?	STACK /?PRG9
+	PRINTR	"It's pointing right at you!"
+?PRG9:	PRINTR	"It's a bamboo tube, two feet long and as thin as a small snake."
+?CCL3:	EQUAL?	PRSA,V?LOOK-THROUGH,V?LOOK-INSIDE \?CCL12
+	FSET?	BLOWGUN,MUNGBIT \?PRG18
+	PRINTR	"It's empty."
+?PRG18:	PRINTI	"There's a"
+	PRINT	POISON-DART
+	PRINTR	" inside."
+?CCL12:	EQUAL?	PRSA,V?EMPTY \?CND20
+	SET	'PRSA,V?USE
+?CND20:	CALL	SHOOTING,BLOWGUN
+	RSTACK	
+
+
+	.FUNCT	NO-VIOLENCE?,OBJ,P
+	EQUAL?	PRSA,V?SLAP /?CTR2
+	EQUAL?	PRSA,V?SHOOT,V?KILL,V?ATTACK \?CCL3
+?CTR2:	SET	'P,PRSO
+	JUMP	?CND1
+?CCL3:	SET	'P,PRSI
+?CND1:	ZERO?	P \?CND6
+	CALL	FIND-FLAG-HERE-NOT,PERSONBIT,MUNGBIT,WINNER >P
+?CND6:	ZERO?	P \?CND8
+	SET	'CLOCK-WAIT,TRUE-VALUE
+	PRINTI	"(You didn't say whom to use it on!)"
+	CRLF	
+	RFALSE	
+?CND8:	EQUAL?	P,GHOST-NEW /?CCL14
+	ZERO?	VILLAIN-KNOWN? /?PRG19
+	EQUAL?	P,VILLAIN-PER /?CCL14
+?PRG19:	PRINT	NO-VIOLENCE
+	RFALSE	
+?CCL14:	FSET?	P,MUNGBIT \?CCL22
+	PRINT	NO-VIOLENCE
+	RFALSE	
+?CCL22:	EQUAL?	VILLAIN-PER,LOVER /?CCL26
+	CALL	QUEUED?,I-SHOT
+	ZERO?	STACK \?CCL26
+	PRINT	NO-VIOLENCE
+	RFALSE	
+?CCL26:	ZERO?	LIONEL-SPEAKS-COUNTER /?CCL32
+	CALL	TELL-BAD-FORM
+	RFALSE	
+?CCL32:	SET	'SHOOTER,FALSE-VALUE
+	CALL	QUEUE,I-SHOT,0
+	EQUAL?	VILLAIN-PER,LOVER \?CND33
+	CALL	GHOST-FLEES
+	RFALSE	
+?CND33:	FSET	P,MUNGBIT
+	FCLEAR	P,NDESCBIT
+	PUTP	P,P?LDESC,19
+	GETP	P,P?CHARACTER
+	GET	GOAL-TABLES,STACK
+	PUT	STACK,ATTENTION,0
+	EQUAL?	P,GHOST-NEW \?CND35
+	GETP	VILLAIN-PER,P?CHARACTER
+	GET	GOAL-TABLES,STACK
+	PUT	STACK,ATTENTION,0
+?CND35:	EQUAL?	OBJ,CANE,WAR-CLUB,MACE \?CCL39
+	RANDOM	6
+	ADD	9,STACK
+	CALL	QUEUE,I-COME-TO,STACK
+	JUMP	?CND37
+?CCL39:	GETP	P,P?CHARACTER
+	PUT	SHOT,STACK,TRUE-VALUE
+	EQUAL?	P,GHOST-NEW \?CND37
+	GETP	VILLAIN-PER,P?CHARACTER
+	PUT	SHOT,STACK,TRUE-VALUE
+?CND37:	GETP	P,P?LINE
+	ADD	3,STACK
+	PUTP	P,P?LINE,STACK
+	CALL	HE-SHE-IT,P,TRUE-VALUE
+	IN?	BLOWGUN,P \?CND44
+	FSET	BLOWGUN,TAKEBIT
+	FCLEAR	BLOWGUN,NDESCBIT
+	MOVE	BLOWGUN,HERE
+	PRINTI	" drops"
+	CALL	PRINTT,BLOWGUN
+	PRINTI	" and"
+?CND44:	EQUAL?	OBJ,MACE \?PRG53
+	PRINTI	" claps both hands over"
+	CALL	HIM-HER-IT,P,FALSE-VALUE,TRUE-VALUE
+	PRINTI	" mouth and nose. "
+	CALL	HIM-HER-IT,P,TRUE-VALUE,TRUE-VALUE
+	PRINTI	" face takes on a greenish pallor, and strangled noises issue from"
+	CALL	HIM-HER-IT,P,FALSE-VALUE,TRUE-VALUE
+	PRINTI	" throat"
+	JUMP	?PRG55
+?PRG53:	PRINTI	" looks surprised and stunned. Then"
+	CALL	HIM-HER-IT,P,FALSE-VALUE,TRUE-VALUE
+	PRINTI	" eyes flutter"
+?PRG55:	PRINTI	". Next moment"
+	CALL	HE-SHE-IT,P
+	PRINTI	" collapses "
+	CALL	GROUND-DESC
+	PRINT	STACK
+	PRINTI	"!
+"
+	RETURN	P
+
+
+	.FUNCT	SHOOTING,OBJ,P=0
+	CALL	ATTACK-VERB?,TRUE-VALUE
+	ZERO?	STACK /FALSE
+	CALL	NO-VIOLENCE?,OBJ
+	ZERO?	STACK /TRUE
+	EQUAL?	OBJ,BLOWGUN \TRUE
+	FSET	BLOWGUN,MUNGBIT
+	RTRUE	
+
+
+	.FUNCT	MACE-F,P=0
+	EQUAL?	PRSA,V?PUSH \?CCL3
+	CALL	FIND-FLAG-HERE-NOT,PERSONBIT,MUNGBIT,PLAYER >P
+	CALL	QUEUED?,I-SHOT
+	ZERO?	STACK /?PRG8
+	ZERO?	P /?PRG8
+	CALL	PERFORM,V?SHOOT,P,MACE
+	RTRUE	
+?PRG8:	PRINTI	"The "
+	PRINTD	MACE
+	PRINTI	" emits a foul-smelling spray."
+	ZERO?	P /?CND10
+	PRINTC	32
+	CALL	HE-SHE-IT,P,TRUE-VALUE
+	PRINTR	" says, ""Have a care! You almost shot me!"""
+?CND10:	CRLF	
+	RTRUE	
+?CCL3:	EQUAL?	PRSA,V?SMELL \?CCL15
+	PRINTR	"It smells foul!"
+?CCL15:	CALL	SHOOTING,MACE
+	RSTACK	
+
+
+	.FUNCT	NECKLACE-OF-D-F
+	EQUAL?	PRSA,V?CLOSE,V?OPEN \?CCL3
+	CALL	YOU-CANT
+	RSTACK	
+?CCL3:	EQUAL?	PRSA,V?PUT-IN /?PRD7
+	EQUAL?	PRSA,V?PUT,V?HOLD-UP,V?COMPARE \?CCL5
+?PRD7:	EQUAL?	JEWEL,PRSO,PRSI \?CCL5
+	EQUAL?	PRSA,V?PUT-IN \?PRG12
+	MOVE	JEWEL,NECKLACE-OF-D
+?PRG12:	PRINTI	"The "
+	PRINTD	JEWEL
+	PRINTR	" fits the empty socket and matches the other red stones."
+?CCL5:	EQUAL?	PRSA,V?PUT-IN \?CCL15
+	EQUAL?	PRSI,NECKLACE-OF-D \FALSE
+	CALL	TOO-BAD-BUT,PRSO,STR?277
+	RSTACK	
+?CCL15:	EQUAL?	PRSA,V?FIX \?CCL20
+	CALL	YOU-CANT
+	RSTACK	
+?CCL20:	EQUAL?	PRSA,V?EXAMINE \?CCL22
+	PRINTI	"It's a slender string of small, sparkling red, nonprecious stones. You notice that"
+	PRINT	CLASP-MUNGED
+	PRINTI	", as if the clasp had been pulled open by force."
+	IN?	JEWEL,NECKLACE-OF-D /?CND25
+	PRINTR	" You also notice an empty socket or setting, from which one of the red stones is missing."
+?CND25:	CRLF	
+	RTRUE	
+?CCL22:	EQUAL?	PRSA,V?WEAR /?CCL31
+	EQUAL?	PRSA,V?PUT \FALSE
+	FSET?	PRSI,PERSONBIT \FALSE
+?CCL31:	CALL	WEAR-SCARE
+	RSTACK	
+
+
+	.FUNCT	LENS-2-F
+	EQUAL?	PRSA,V?COMPARE \FALSE
+	EQUAL?	LENS-1,PRSO,PRSI \FALSE
+	PRINTR	"As near as you can tell, they're a matched set."
+
+
+	.FUNCT	LENS-BOX-F,X
+	EQUAL?	PRSA,V?OPEN,V?LOOK-INSIDE,V?EXAMINE \FALSE
+	FSET?	LENS,SEENBIT \?CND4
+	LOC	LENS >X
+	ZERO?	X /?CND4
+	MOVE	LENS-1,X
+	REMOVE	LENS
+?CND4:	FSET	LENS-BOX,OPENBIT
+	PRINTI	"You lift the hinged cover. Inside is a bed of moist foam rubber"
+	FIRST?	LENS-BOX >X /?KLU16
+?KLU16:	ZERO?	X /?PRG14
+	PRINTI	", holding"
+	CALL	PRINT-CONTENTS,LENS-BOX
+?PRG14:	PRINTR	". It's obvious that the box will hold two lenses."
+
+
+	.FUNCT	LETTER-F
+	EQUAL?	PRSA,V?READ,V?LOOK-INSIDE,V?EXAMINE /?CCL3
+	EQUAL?	PRSA,V?SHOW \FALSE
+	FSET?	LETTER,TOUCHBIT /FALSE
+?CCL3:	CALL	NOT-HOLDING?,LETTER
+	ZERO?	STACK \TRUE
+	FSET	LETTER-MAID,SEENBIT
+	PRINTI	"It says,
+""Your Lordship:
+Following instructions in your late Uncle Lionel's will, the other servants and I have left the castle after sounding the dinner gong. We shall remain away until tomorrow morning.
+I regret to inform you that Gladys, the "
+	PRINTD	MAID
+	PRINTI	", will not return with the rest of us. She wrote a note to Your Lordship explaining the reason. She told me that she put it on the "
+	PRINTD	WRITING-DESK
+	PRINTI	" in the "
+	PRINTD	SITTING-ROOM
+	PRINTI	".
+(signed) "
+	PRINTD	BUTLER
+	PRINTR	"."""
+
+
+	.FUNCT	LETTER-MAID-F
+	CALL	REMOTE-VERB?
+	ZERO?	STACK \FALSE
+	FCLEAR	LETTER-MAID,NDESCBIT
+	EQUAL?	PRSA,V?READ,V?LOOK-INSIDE,V?EXAMINE /?CCL5
+	EQUAL?	PRSA,V?SHOW \FALSE
+	FSET?	LETTER-MAID,TOUCHBIT /FALSE
+?CCL5:	CALL	NOT-HOLDING?,LETTER-MAID
+	ZERO?	STACK \TRUE
+	PRINTI	"It says, ""Today while cleaning the room of a certain person who shall be nameless, I was SHOCKED to discover SUMMING DREDFUL!
+I hope I knows me place, Your Lordship, but I was brought up to be a PERFECKLY RESPECTABLE young woman, and I cannot go on working under the same roof where such WICKEDNESS takes place.
+I am not the type of girl given to idle gossip, so I will only say this. Maybe there is more reason than ANYONE SUSPECKS why that so-called ghost prowls about the castle at night, if you know what I mean.
+"
+	EQUAL?	VARIATION,LORD-C \?CCL16
+	PRINTI	"I am not the type who peeks through "
+	PRINTD	KEYHOLE
+	PRINTI	"s, either, but maybe it is high time someone did"
+	JUMP	?PRG26
+?CCL16:	EQUAL?	VARIATION,FRIEND-C \?CCL20
+	PRINTI	"Maybe you will also be surprised to learn that a certain pet shop in Frobzance sells more than just harmless puppies, kittens, and budgies"
+	JUMP	?PRG26
+?CCL20:	EQUAL?	VARIATION,PAINTER-C,DOCTOR-C \?PRG26
+	PRINTI	"Me Dad always says that the first sign of a nut case is when a person starts talking to hisself. Well, if you was to ask me, there is more than one way to talk to "
+	PRINTD	PLAYER
+	PRINTI	". Some does it on paper, and that is the type person to watch out for"
+?PRG26:	PRINTR	"!"""
+
+
+	.FUNCT	LETTER-DEE-F
+	EQUAL?	PRSA,V?READ,V?LOOK-INSIDE,V?EXAMINE /?CCL3
+	EQUAL?	PRSA,V?SHOW \FALSE
+	FSET?	LETTER-DEE,TOUCHBIT /FALSE
+?CCL3:	CALL	NOT-HOLDING?,LETTER-DEE
+	ZERO?	STACK \TRUE
+	PRINTI	"The writing is thick with loops and curls. It says,
+""Dear Uncle Lionel,
+I'm writing this on the train, coming up from London, where I saw Grandpapa in the clinic. He's so frightfully ill! I know "
+	PRINTD	DOCTOR
+	PRINTI	" is your old friend, but I can't help thinking his 'special treatments' are making Grandpapa worse, not better. Would you be a dear and find out just what he's doing there? I'd be ever so grateful!
+Love,
+"
+	PRINTD	LOVER
+	PRINTR	"."""
+
+	.ENDI
